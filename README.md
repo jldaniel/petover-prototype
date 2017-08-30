@@ -7,6 +7,8 @@ Things you may want to cover:
 
 * Ruby version
 
+* Perhaps visitors - FYI C4TMSTR was here.
+
 * System dependencies
 
 * Configuration
