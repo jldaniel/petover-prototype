@@ -1,15 +1,56 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>PetOver</title>
-  <base href="/">
+	<meta charset="UTF-8">
+	<title>Sign in | PetOver</title>
+	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/	bootstrap-theme.min.css" integrity="	sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="	sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">	</script>
+
+	<style type="text/css">
+	body {
+		padding-top: 120px;
+		padding-bottom: 40px;
+		background-color: #e6f9ff;
+	}
+	.form-signin {
+		max-width: 300px;
+		padding: 20px 40px 60px;
+		margin: 0 auto 20px;
+		background-color: #fff;
+		border: 1px solid #e5e5e5;
+	}
+	.form-signin-heading {
+		text-align: center;
+		margin-bottom: 20px;
+		font-size:55px;
+	}
+	.form-signin input[type="password"]{
+		font-size:16px;
+		height: auto;
+		margin-bottom: 15px;
+		margin-top: 24px;
+		padding: 7px 9px;
+	}
+
+	</style>
+	
 </head>
 <body>
-  <h1>PetOver LIVES!</h1>
-  <app-root></app-root>
+
+    <div class="container">
+
+      <form class="form-signin">
+        <h2 class="form-signin-heading">PetOver</h2>
+        <img src="/assets/paw-print.gif" alt="logo placeholder">
+        <input type="password" class="input-block-level" placeholder="password">
+        <button class="btn btn-large btn-primary pull-right" type="submit">Sign in</button>
+      </form>
+
+    </div> 
 </body>
-</html>
