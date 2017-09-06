@@ -12,8 +12,15 @@ export class ApiService {
     console.log('ApiService.splashLogin called');
     const headers = new Headers();
     headers.append('Authentication', password);
-    return this.http.get(this.splashUrl, {headers: headers})
+
+    const options = {
+      headers: headers
+    };
+
+    return this.http.get(this.splashUrl, options)
       .toPromise();
   }
 
 }
+
+
