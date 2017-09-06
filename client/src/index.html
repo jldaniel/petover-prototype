@@ -3,14 +3,21 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Sign in | PetOver</title>
-	<link rel="shortcut icon" href="/assets/favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 	<!-- Optional theme -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/	bootstrap-theme.min.css" integrity="	sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-	
+
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="	sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous">	</script>
+
 
 	<style type="text/css">
 	body {
@@ -18,44 +25,14 @@
 		padding-bottom: 40px;
 		background-color: #e6f9ff;
 	}
-	.form-signin {
-		max-width: 300px;
-		padding: 20px 40px 60px;
-		margin: 0 auto 20px;
-		background-color: #fff;
-		border: 1px solid #e5e5e5;
-	}
-	.form-signin-heading {
-		text-align: center;
-		margin-bottom: 20px;
-		font-size:55px;
-	}
-	.form-signin input[type="password"]{
-		font-size:16px;
-		height: auto;
-		margin-bottom: 15px;
-		margin-top: 24px;
-		padding: 7px 9px;
-	}
-
-	.form-logo {
-		width: 200px;
-		height: 200px;
-	}
-
 	</style>
-	
+
+  <script>
+    System.import('app-root').catch(function (err) { console.error(err); });
+  </script>
+
 </head>
 <body>
-
-    <div class="container">
-
-      <form class="form-signin">
-        <h2 class="form-signin-heading">PetOver</h2>
-        <img class="form-logo" src="/assets/paw-print.gif" alt="logo placeholder">
-        <input type="password" class="input-block-level" placeholder="password">
-        <button class="btn btn-large btn-primary pull-right" type="submit">Sign in</button>
-      </form>
-
-    </div> 
+<app-root></app-root>
 </body>
+</html>
