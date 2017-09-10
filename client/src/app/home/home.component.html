@@ -1,0 +1,33 @@
+<nav>
+  <!-- PetOver HOME link and Logo -->
+  <a [routerLink]="['/home']"><img src="../../assets/nav-logo.PNG"></a>
+  <!-- Search form -->
+  <p>Find a place for your pet to stay</p>
+  <form>
+    <input type="text" placeholder="Where">
+    <input type="text" placeholder="When">
+    <select>
+      <option>Who</option>
+      <option>My Cat</option>
+      <option>My Dog</option>
+      <option>My Iguana</option>
+    </select>
+    <button type="submit">Woof!</button>
+  </form>
+
+  <a [routerLink]="['home/about']">About</a>
+  <a [routerLink]="['about/caretakers']">Become a Caretaker</a>
+  <a [routerLink]="['/login']">Login</a>
+</nav>
+
+
+<div>
+  <h3>LIST OF CARETAKERS</h3>
+
+</div>
+
+<footer>
+  <p>&copy; PetOver 2017</p>
+</footer>
+
+

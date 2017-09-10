@@ -1,5 +1,5 @@
 import { Component, OnInit  } from '@angular/core';
-import { ApiService } from './_services/api.service';
+import { BetaloginService } from './betalogin/betalogin.service';
 
 @Component({
   selector: 'app-root',
@@ -7,25 +7,10 @@ import { ApiService } from './_services/api.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = 'PetOver';
-  password = '';
+  betaLoggedIn = false;
 
-  constructor(private apiService: ApiService) {
+  constructor(betaloginService: BetaloginService) {
     console.log('AppComponent.constructor called');
-  }
-
-  login(): void {
-    console.log('AppComponent.login called');
-
-    this.apiService.splashLogin(this.password)
-      .then(response => console.log('Login success!'))
-      .catch(error => console.log('Login failure!'));
-
-    console.log('AppComponent after splash login');
-  }
-
-  logout(): void {
-    console.log('AppComponent.logout called');
   }
 
   ngOnInit(): void {
