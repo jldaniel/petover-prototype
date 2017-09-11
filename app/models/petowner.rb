@@ -1,0 +1,2 @@
+class Petowner < ApplicationRecord
+end
