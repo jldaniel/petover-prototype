@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+caretakers = Caretaker.create([
+      {firstname: 'Morty', lastname: 'Smith', profile: '/location/of/images', biography:'Hi Im Morty!'},
+    {firstname: 'Summer', lastname: 'Smith', profile: '/location/of/images', biography:'Hi Im Summer!'},
+    {firstname: 'Rick', lastname: 'Sanchez', profile: '/location/of/images', biography:'Hi Im Rick!'},
+    {firstname: 'Beth', lastname: 'Smith', profile: '/location/of/images', biography:'Hi Im Beth!'},
+    {firstname: 'Jerry', lastname: 'Smith', profile: '/location/of/images', biography:'Hi Im Jerry!'}])

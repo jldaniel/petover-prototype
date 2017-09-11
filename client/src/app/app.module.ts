@@ -14,6 +14,7 @@ import { HomeComponent} from './home/home.component';
 import { PageNotFoundComponent } from './page404/404.component';
 import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
+import {ApiService} from './api/api.service';
 
 
 
@@ -49,7 +50,8 @@ const appRoutes: Routes = [
     HttpModule
   ],
   providers: [
-    BetaloginService
+    BetaloginService,
+    ApiService
   ],
   exports: [
     RouterModule

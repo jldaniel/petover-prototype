@@ -12,6 +12,7 @@ Rails.application.routes.draw do
       get '/:id' => 'api_caretakers#get_caretaker'
       post '/' => 'api_caretakers#create_caretaker'
       patch '/:id' => 'api_caretakers#update_caretaker'
+      delete '/:id' => 'api_caretakers#delete_caretaker'
     end
 
     scope '/caretakers' do
