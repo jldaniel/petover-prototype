@@ -1,17 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/concerns/response.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/api_caretakers_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/api_caretakers_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/app.module.ts" afterPath="$PROJECT_DIR$/client/src/app/app.module.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.component.html" afterPath="$PROJECT_DIR$/client/src/app/home/home.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/home/home.component.ts" afterPath="$PROJECT_DIR$/client/src/app/home/home.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db/seeds.rb" afterPath="$PROJECT_DIR$/db/seeds.rb" />
-    </list>
+    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -126,8 +116,8 @@
     <handled-path value="$PROJECT_DIR$/client/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="270" />
-    <option name="y" value="24" />
+    <option name="x" value="90" />
+    <option name="y" value="111" />
     <option name="width" value="1617" />
     <option name="height" value="943" />
   </component>
@@ -355,15 +345,15 @@
       <option name="presentableId" value="Default" />
       <updated>1504710306434</updated>
       <workItem from="1504710309498" duration="8356000" />
-      <workItem from="1505154444226" duration="4887000" />
+      <workItem from="1505154444226" duration="4990000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13243000" />
+    <option name="totallyTimeSpent" value="13346000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="270" y="24" width="1617" height="943" extended-state="0" />
+    <frame x="90" y="111" width="1617" height="943" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2603587" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -660,18 +650,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/concerns/response.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/concerns/response.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="3" lean-forward="false" selection-start-line="4" selection-start-column="3" selection-end-line="4" selection-end-column="3" />
           <folding />
         </state>
       </provider>

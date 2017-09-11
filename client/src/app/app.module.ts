@@ -27,6 +27,7 @@ const appRoutes: Routes = [
       { path: 'login', component: LoginComponent },
       { path: 'about', component: AboutComponent }
     ]},
+  { path: 'login', component: LoginComponent },
   { path: '', redirectTo: '/beta', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];

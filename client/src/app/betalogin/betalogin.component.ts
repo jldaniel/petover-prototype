@@ -29,7 +29,6 @@ export class BetaloginComponent {
         console.log('Beta Login failure');
         this.password = '';
         this.loginError = true;
-        // TODO display login error
     });
   }
 }
