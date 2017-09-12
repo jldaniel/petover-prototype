@@ -1,24 +1,42 @@
-<nav>
-  <!-- PetOver HOME link and Logo -->
-  <a [routerLink]="['/home']"><img src="../../assets/nav-logo.PNG"></a>
-  <!-- Search form -->
-  <p>Find a place for your pet to stay</p>
-  <form>
-    <input type="text" placeholder="Where">
-    <input type="text" placeholder="When">
-    <select>
-      <option>Who</option>
-      <option>My Cat</option>
-      <option>My Dog</option>
-      <option>My Iguana</option>
-    </select>
-    <button type="submit">Woof!</button>
-  </form>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="container">
+        <img class="navbar-header pull-left" src="../../assets/nav-logo.PNG" alt="logo placeholder" style="width: 5%">
 
-  <a [routerLink]="['home/about']">About</a>
-  <a [routerLink]="['about/caretakers']">Become a Caretaker</a>
-  <a [routerLink]="['/login']">Login</a>
+        <ul class="navbar-form navbar-left form-group has-feedback has-feedback-left">
+          <p>Find a place for your pet to stay</p>
+          <li class="input-group">
+            <input type="text" class="form-control" id="location" placeholder="Where" />
+            <i class="form-control-feedback glyphicon glyphicon-globe"></i>
+          </li>
+          <li class="input-group">
+            <input type="date" class="form-control" id="date" placeholder="When" />
+            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+          </li>
+          <select class="selectpicker form-control">
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Lizard</option>
+          </select>
+          <button class="btn navbar-btn">
+            Search!
+          </button>
+        </ul>
+
+      </div>
+
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['home/about']">About</a></li>
+      <li><a [routerLink]="['about/caretakers']">Become a Caretaker</a></li>
+      <li><<a [routerLink]="['/login']">Login</a></li>
+    </ul>
+  </div>
 </nav>
+
+
+
 
 
 <div>
