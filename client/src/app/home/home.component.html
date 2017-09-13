@@ -30,10 +30,14 @@
     <ul class="nav navbar-nav">
       <li><a [routerLink]="['home/about']">About</a></li>
       <li><a [routerLink]="['about/caretakers']">Become a Caretaker</a></li>
-      <li><<a [routerLink]="['/login']">Login</a></li>
+      <li><a [routerLink]="['/login']">Login</a></li>
     </ul>
   </div>
 </nav>
+
+
+
+
 
 
 
@@ -43,8 +47,54 @@
 <ul>
   <li *ngFor="let caretaker of caretakers">
     <div>
-      <h4>{{caretaker.firstname}} {{caretaker.lastname}}</h4>
-      <p>{{caretaker.biography}}</p>
+      <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid;">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="text-center">{{caretaker.firstname}} {{caretaker.lastname}}</h4>
+            <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%; border:1px solid;">
+              <img src="paw-print.gif" style="width:50%" class="center-block">
+            </div>
+            <p class="text-center">&#9733;&#9733;&#9733;</p>
+          </div>
+          <!-- Middle - About/rate -->
+          <div class="col-md-4">
+            <div class="row text-center" style="margin: 10% 0% 0 0%;border:1px solid;padding: 2% 0 45%;">
+              <p class="center-block"> {{caretaker.biography}}</p>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2">Pet Sitting</div>
+              <div class="col-md-4">$52/night</div>
+            </div>
+          </div>
+          <!-- Right - Review Box -->
+          <div class="col-md-4">
+            <div class="row" style="margin: 10% 0% 0% 0%;border:1px solid;padding: 3%;">
+              <h4 class="text-left media-heading">Reviews</h4>
+              <div class="media" style="border:1px solid;">
+                <div class="media-left">
+                  <img src="paw-print.gif" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <p>Excelent Service!</p>
+                </div>
+              </div>
+              <hr>
+              <div class="media" style="border:1px solid;">
+                <div class="media-left">
+                  <img src="paw-print.gif" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <p>Very clean and spacious</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
     </div>
   </li>
 </ul>
