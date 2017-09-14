@@ -43,11 +43,8 @@
 
 
 
-<div>
-<ul>
-  <li *ngFor="let caretaker of caretakers">
-    <div>
-      <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid;">
+<div *ngFor="let caretaker of caretakers">
+      <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
         <div class="row">
           <div class="col-md-4">
             <h4 class="text-center">{{caretaker.firstname}} {{caretaker.lastname}}</h4>
@@ -91,13 +88,6 @@
           </div>
         </div>
       </div>
-
-
-
-
-    </div>
-  </li>
-</ul>
 
 </div>
 
