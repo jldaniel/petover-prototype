@@ -38,7 +38,11 @@ to
 local    all             all                        md5
 ```
 
-
+Setting up the ruby on rails database and seeding it with data
+```bash
+cd petover
+rake db:drop db:create db:migrate db:seed
+```
 
 
 
