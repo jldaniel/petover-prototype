@@ -1,35 +1,93 @@
-<nav>
-  <!-- PetOver HOME link and Logo -->
-  <a [routerLink]="['/home']"><img src="../../assets/nav-logo.PNG"></a>
-  <!-- Search form -->
-  <p>Find a place for your pet to stay</p>
-  <form>
-    <input type="text" placeholder="Where">
-    <input type="text" placeholder="When">
-    <select>
-      <option>Who</option>
-      <option>My Cat</option>
-      <option>My Dog</option>
-      <option>My Iguana</option>
-    </select>
-    <button type="submit">Woof!</button>
-  </form>
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <div class="container">
+        <img class="navbar-header pull-left" src="../../assets/nav-logo.PNG" alt="logo placeholder" style="width: 5%">
 
-  <a [routerLink]="['home/about']">About</a>
-  <a [routerLink]="['about/caretakers']">Become a Caretaker</a>
-  <a [routerLink]="['/login']">Login</a>
+        <ul class="navbar-form navbar-left form-group has-feedback has-feedback-left">
+          <p>Find a place for your pet to stay</p>
+          <li class="input-group">
+            <input type="text" class="form-control" id="location" placeholder="Where" />
+            <i class="form-control-feedback glyphicon glyphicon-globe"></i>
+          </li>
+          <li class="input-group">
+            <input type="date" class="form-control" id="date" placeholder="When" />
+            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+          </li>
+          <select class="selectpicker form-control">
+            <option>Dog</option>
+            <option>Cat</option>
+            <option>Lizard</option>
+          </select>
+          <button class="btn navbar-btn">
+            Search!
+          </button>
+        </ul>
+
+      </div>
+
+    </div>
+    <ul class="nav navbar-nav">
+      <li><a [routerLink]="['home/about']">About</a></li>
+      <li><a [routerLink]="['about/caretakers']">Become a Caretaker</a></li>
+      <li><a [routerLink]="['/login']">Login</a></li>
+    </ul>
+  </div>
 </nav>
 
 
-<div>
-<ul>
-  <li *ngFor="let caretaker of caretakers">
-    <div>
-      <h4>{{caretaker.firstname}} {{caretaker.lastname}}</h4>
-      <p>{{caretaker.biography}}</p>
-    </div>
-  </li>
-</ul>
+
+
+
+
+
+
+
+<div *ngFor="let caretaker of caretakers">
+      <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
+        <div class="row">
+          <div class="col-md-4">
+            <h4 class="text-center">{{caretaker.firstname}} {{caretaker.lastname}}</h4>
+            <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%; border:1px solid;">
+              <img src="paw-print.gif" style="width:50%" class="center-block">
+            </div>
+            <p class="text-center">&#9733;&#9733;&#9733;</p>
+          </div>
+          <!-- Middle - About/rate -->
+          <div class="col-md-4">
+            <div class="row text-center" style="margin: 10% 0% 0 0%;border:1px solid;padding: 2% 0 45%;">
+              <p class="center-block"> {{caretaker.biography}}</p>
+            </div>
+            <div class="row">
+              <div class="col-md-4 col-md-offset-2">Pet Sitting</div>
+              <div class="col-md-4">$52/night</div>
+            </div>
+          </div>
+          <!-- Right - Review Box -->
+          <div class="col-md-4">
+            <div class="row" style="margin: 10% 0% 0% 0%;border:1px solid;padding: 3%;">
+              <h4 class="text-left media-heading">Reviews</h4>
+              <div class="media" style="border:1px solid;">
+                <div class="media-left">
+                  <img src="paw-print.gif" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <p>Excelent Service!</p>
+                </div>
+              </div>
+              <hr>
+              <div class="media" style="border:1px solid;">
+                <div class="media-left">
+                  <img src="paw-print.gif" class="media-object" style="width:60px">
+                </div>
+                <div class="media-body">
+                  <p>Very clean and spacious</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
 </div>
 
