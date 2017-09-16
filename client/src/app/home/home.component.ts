@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { Caretaker } from '../api/caretaker';
+import { User } from '../api/User';
 
 @Component({
   selector: 'app-root',
@@ -8,7 +8,7 @@ import { Caretaker } from '../api/caretaker';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  caretakers: Caretaker[];
+  users: User[];
 
   constructor(private api: ApiService) {
     console.log('HomeComponent.constructor called');
@@ -18,10 +18,10 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
     console.log('HomeComponent.ngOnInit called');
     // load local caretakers
-    this.api.getCaretakers()
-      .then(caretakers => this.caretakers = caretakers);
+    this.api.getUsers()
+      .then(caretakers => this.users = caretakers);
     console.log('Retrieved caretakers');
-    console.log(this.caretakers);
+    console.log(this.users);
 
   }
 }

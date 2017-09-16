@@ -1,24 +1,52 @@
 Rails.application.routes.draw do
+  resources :users
+
   scope '/betalogin' do
     get '/' => 'betalogin#login'
   end
 
   scope '/api' do
     scope '/login' do
-      get '/' => 'api_login#login'
+      get '/' => 'users#login'
     end
 
-    scope '/caretaker' do
-      get '/:id' => 'api_caretakers#get_caretaker'
-      post '/' => 'api_caretakers#create_caretaker'
-      patch '/:id' => 'api_caretakers#update_caretaker'
-      delete '/:id' => 'api_caretakers#delete_caretaker'
+    scope '/users' do
+      get '/' => 'users#index'
+      get '/:id' => 'users#show'
+      post '/' => 'users#create'
+      put '/:id' => 'users#update'
+      delete '/' => 'users#destroy'
+
+      scope '/:user_id/pets' do
+        get '/' => 'user#index_pet'
+        get '/:id' => 'user#show_pet'
+      end
+
+      scope '/:user_id/services' do
+        get '/' => 'user#index_service'
+        get '/:id' => 'user#show_service'
+      end
+
     end
 
-    scope '/caretakers' do
-      get '/' => 'api_caretakers#get_caretakers' # TODO Add search params
+
+    scope '/pets' do
+      get '/' => 'pets#index'
+      get '/:id' => 'pets#show'
+      post '/' => 'pets#create'
+      put '/' => 'pets#update'
+      delete '/' => 'pets#destroy'
     end
 
+
+
+    scope '/services' do
+      get '/' => 'services#index'
+      get '/:id' => 'services#show'
+      post '/' => 'services#create'
+      put '/' => 'services#update'
+      delete '/' => 'services#destroy'
+    end
 
   end
 
