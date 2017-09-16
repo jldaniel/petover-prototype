@@ -9,4 +9,6 @@ export class Service {
   rating: number;
   create_at: string;
   updated_at: string;
+
+  profile_image_url: string;
 }

@@ -10,6 +10,7 @@ import { User } from '../api/User';
 export class HomeComponent implements OnInit {
   users: User[];
 
+
   constructor(private api: ApiService) {
     console.log('HomeComponent.constructor called');
 

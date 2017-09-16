@@ -6,10 +6,24 @@ import {User} from './User';
 
 @Injectable()
 export class ApiService {
+  /**
+   * The base url for the PetOver REST API
+   * @type {string}
+   */
   private baseUrl = '/api';
+
+  /**
+   * The URL for login requests
+   * @type {string}
+   */
   private loginUrl = '/api/login';
+
+  /**
+   * The base URL for the users API
+   * @type {string}
+   */
   private usersUrl = this.baseUrl + '/users';
-  private caretakersUrl = this.baseUrl + '/caretakers';
+
 
   constructor(private http: Http) {
     console.log('ApiService.constructor called');
@@ -25,6 +39,8 @@ export class ApiService {
   login(email: string, password: string): Promise<User> {
     console.log('ApiService.login called');
     const headers = this.createHeaders();
+    const authString = btoa(email + '|' + password);
+    headers.append('Authentication', authString);
 
     return this.http.get(this.loginUrl, {headers: headers}).toPromise()
       .then(response => response.json() as User)

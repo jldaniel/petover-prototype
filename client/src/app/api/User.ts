@@ -13,4 +13,8 @@ export class User {
   pets: Pet[];
   services: Service[];
 
+  getProfileImageUrl(): string {
+    return '/assets' + this.img_url;
+  }
+
 }

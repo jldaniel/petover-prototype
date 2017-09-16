@@ -1,10 +1,26 @@
+require "base64"
+
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /login
   def login
     puts 'UsersController.login'
+    auth_string_encoded = request.headers['Authentication']
+    auth_string = Base64.decode64(auth_string_encoded)
+    split = auth_string.split('|')
+    email = split[0]
+    password = split[1]
 
+    @user = User.find_by_email(email)
+
+    user_pass = @user.password
+    if password == user_pass
+      render json: @user
+    else
+      render :status => :unauthorized
+    end
+    
   end
 
   # GET /users
