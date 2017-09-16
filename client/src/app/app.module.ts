@@ -15,6 +15,8 @@ import { PageNotFoundComponent } from './page404/404.component';
 import {AboutComponent} from './about/about.component';
 import {LoginComponent} from './login/login.component';
 import {ApiService} from './api/api.service';
+import {LoginService} from './util/login.service';
+import {DashboardComponent} from './dashboard/dashboard.component';
 
 
 
@@ -28,6 +30,7 @@ const appRoutes: Routes = [
       { path: 'about', component: AboutComponent }
     ]},
   { path: 'login', component: LoginComponent },
+  { path: 'dashboard', component: DashboardComponent }, // todo add in a dashboard component
   { path: '', redirectTo: '/beta', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent }
 ];
@@ -39,7 +42,8 @@ const appRoutes: Routes = [
     PageNotFoundComponent,
     HomeComponent,
     AboutComponent,
-    LoginComponent
+    LoginComponent,
+    DashboardComponent
   ],
   imports: [
     RouterModule.forRoot(
@@ -52,7 +56,8 @@ const appRoutes: Routes = [
   ],
   providers: [
     BetaloginService,
-    ApiService
+    ApiService,
+    LoginService
   ],
   exports: [
     RouterModule
