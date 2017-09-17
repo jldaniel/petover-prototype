@@ -44,7 +44,11 @@ cd petover
 rake db:drop db:create db:migrate db:seed
 ```
 
-
+** Pushing App to Heroku
+```bash
+git push heroku master
+git run rake db:seed
+```
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

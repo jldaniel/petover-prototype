@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import {ApiService} from '../api/api.service';
 
 
@@ -15,7 +16,7 @@ export class RegisterComponent {
   newUserSuccess = false;
   newUserError = false;
 
-  constructor(private api: ApiService) {
+  constructor(private router: Router, private api: ApiService) {
     console.log('RegisterComponent.constructor called');
   }
 
@@ -39,6 +40,7 @@ export class RegisterComponent {
           // Display a message and a link to proceed to the login page
           // Maybe do something with a new user flag to take them to their profile
           this.newUserSuccess = true;
+          this.router.navigate(['/login']);
         }).catch( error => {
           // Display an error message
           console.log('Error creating new user');
