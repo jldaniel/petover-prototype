@@ -1,0 +1,8 @@
+<div>
+  <form (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+    <input type="email" placeholder="email" name="email" [(ngModel)]="email">
+    <input type="password" placeholder="password" name="password" [(ngModel)]="password">
+    <input type="password" placeholder="repeat password" name="passwordCheck" [(ngModel)]="passwordCheck">
+    <button type="submit">Create Account</button>
+  </form>
+</div>

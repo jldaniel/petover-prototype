@@ -46,7 +46,16 @@ class UsersController < ApplicationController
 
   # POST /users
   def create
-    @user = User.new(user_params)
+    puts('POST /users')
+    auth_string_encoded = request.headers['Authentication']
+    auth_string = Base64.decode64(auth_string_encoded)
+    split = auth_string.split('|')
+    email = split[0]
+    password = split[1]
+
+    # TODO Check if user already exist, if so this call should fail
+
+    @user = User.new({email: email, password: password})
 
     if @user.save
       render json: @user, status: :created, location: @user
@@ -89,7 +98,7 @@ class UsersController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def user_params
-      params.require(:user).permit(:petowner)
+      params.require(:user)
     end
 
     def get_user_pets(user)

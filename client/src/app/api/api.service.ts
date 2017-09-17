@@ -78,6 +78,27 @@ export class ApiService {
       .catch(error => this.handleError(error));
   }
 
+  /**
+   * Create a new user
+   *
+   * @param {string} email The user's email
+   * @param {string} password The user's password
+   * @returns {Promise<User>} The new user resource
+   */
+  newUser(email: string, password: string): Promise<User> {
+    console.log('ApiService.newUser called');
+    const headers = this.createHeaders();
+
+    const authString = btoa(email + '|' + password);
+    console.log('newUser authString: ' + authString);
+    headers.append('Authentication', authString);
+
+    return this.http.post(this.usersUrl, {} , {headers: headers})
+      .toPromise()
+      .then(response => response.json() as User)
+      .catch( error => this.handleError(error));
+  }
+
 
   /**
    * Put together the headers for the REST request
