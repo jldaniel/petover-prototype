@@ -20,24 +20,25 @@ class UsersController < ApplicationController
     else
       render :status => :unauthorized
     end
-    
+
   end
 
   # GET /users
   def index
     @users = User.all
 
-    render json: @users
+    render :json => @users.to_json(include: [:pets, :services])
+    #render json: @users
   end
 
   # GET /users/1
   def show
     puts('GET /user/:id')
     @user = set_user()
-    @pets = Pet.find_by_user_id(@user.id)
-    @services = Service.find_by_user_id(@user.id)
-    @user.pets = @pets
-    @user.services = @services
+    #@pets = Pet.find_by_user_id(@user.id)
+    #@services = Service.find_by_user_id(@user.id)
+    #@user.pets = @pets
+    #@user.services = @services
 
     # By default only the base object is rendered, this adds in the pets and services
     render :json => @user.to_json(include: [:pets, :services])

@@ -10,8 +10,8 @@ export class User {
   img_url: string;
   created_at: string;
   updated_at: string;
-  pets: Pet[];
-  services: Service[];
+  pets: Pet[] = null;
+  services: Service[] = null;
 
   getProfileImageUrl(): string {
     return '/assets' + this.img_url;
