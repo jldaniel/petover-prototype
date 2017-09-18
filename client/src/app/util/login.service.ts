@@ -6,6 +6,7 @@ export class LoginService {
   private authString = null;
   public loggedIn = false;
   private user: User = null;
+  public userId: number;
 
   constructor() {
     console.log('LoginService constructor called');
@@ -15,6 +16,7 @@ export class LoginService {
     this.user = user;
     this.authString = authString;
     this.loggedIn = true;
+    this.userId = user.id;
   }
 
   logoutUser() {
