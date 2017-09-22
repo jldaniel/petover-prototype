@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { Http, Headers } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 import {User} from './User';
+import {Pet} from './Pet';
+import {Service} from './Service';
 
 
 @Injectable()
@@ -99,6 +101,92 @@ export class ApiService {
       .catch( error => this.handleError(error));
   }
 
+  /**
+   * Update a users profile with the supplied information
+   *
+   * @param {number} userId The ID of the user to update
+   * @param {string} first_name The first name of the user to update
+   * @param {string} last_name The last name of the user to update
+   * @param {string} about_me The about me section of the user to update
+   * @returns {Promise<any | never | User>}
+   */
+  updateUser(userId: number, first_name: string, last_name: string, about_me: string) {
+    console.log('ApiService.updateUser called');
+
+    const body = {
+      'first_name': first_name,
+      'last_name': last_name,
+      'about_me': about_me
+    };
+
+    const headers = this.createHeaders();
+
+    return this.http.put(this.usersUrl, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as User)
+      .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Add a new pet to the specified user
+   *
+   * @param {number} userId The ID of the user to add the pet to
+   * @param {string} name The name of the pet
+   * @param {string} about_me Information about the pet
+   * @param {string} animal The type of animal that the pet is
+   * @returns {Promise<any | never | Pet>}
+   */
+  newPet(userId: number, name: string, about_me: string, animal: string) {
+    console.log('ApiService.newPet called');
+    // TODO Authentication handling
+    const url = this.usersUrl + '/' + userId + '/pets';
+
+    // TODO: The construction of the Pet model should be handled someplace else
+    const body = { 'pets': {
+      'name': name,
+      'about_me': about_me,
+      'animal': animal
+    }};
+
+    const headers = this.createHeaders();
+
+    return this.http.post(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Pet)
+      .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Add a new service to the specified user
+   *
+   * @param {number} userId The ID of the user to add the service to
+   * @param {string} name The name of the service
+   * @param {string} about Information about the service
+   * @param {number} rate The rate of the service in USD
+   * @param {number} rate_type The rate type, either hourly, once, or daily
+   * @returns {Promise<any | never | Service>}
+   */
+  newService(userId: number, name: string, about: string, rate: number, rate_type: number) {
+    console.log('ApiService.newService called');
+    // TODO: Authentication handling
+    const url = this.usersUrl + '/' + userId + '/services';
+
+    // TODO: The construction of the Service model should be handled someplace else
+    const body = { 'service': {
+      'name': name,
+      'about': about,
+      'rate': rate,
+      'rate_type': rate_type
+    }};
+
+    const headers = this.createHeaders();
+
+    return this.http.post(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Service)
+      .catch(error => this.handleError(error));
+  }
+
 
   /**
    * Put together the headers for the REST request
@@ -106,7 +194,7 @@ export class ApiService {
    * @returns {Headers}
    */
   private createHeaders(): Headers {
-    const headers = new Headers({'Content-Type': 'application/json'});
+    const headers = new Headers({'Content-Type': 'application/json', 'Accept': 'application/json'});
     return headers;
   }
 
