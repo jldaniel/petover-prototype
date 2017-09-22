@@ -6,7 +6,7 @@ Initial database setup for development
 Install the database and dependencies
 ```bash
 $ sudo apt-get update
-$ sudo apt-get install postgresql postgresql-conrib libpq-dev
+$ sudo apt-get install postgresql postgresql-contrib libpq-dev
 ```
 
 Create the database user and set the password to `toor`
