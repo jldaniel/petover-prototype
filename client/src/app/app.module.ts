@@ -18,7 +18,7 @@ import {ApiService} from './api/api.service';
 import {LoginService} from './util/login.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {RegisterComponent} from './register/register.component';
-import {PetsComponent} from "./pets/pets.component";
+import {PetsComponent} from './pets/pets.component';
 
 // TODO Routing is broken for login and about
 const appRoutes: Routes = [
