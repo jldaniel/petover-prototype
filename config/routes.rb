@@ -18,13 +18,15 @@ Rails.application.routes.draw do
       delete '/' => 'users#destroy'
 
       scope '/:user_id/pets' do
-        get '/' => 'user#index_pet'
-        get '/:id' => 'user#show_pet'
+        get '/' => 'users#index_pet'
+        get '/:id' => 'users#show_pet'
+        post '/' => 'users#add_pet'
       end
 
       scope '/:user_id/services' do
-        get '/' => 'user#index_service'
-        get '/:id' => 'user#show_service'
+        get '/' => 'users#index_service'
+        get '/:id' => 'users#show_service'
+        post '/' => 'users#add_service'
       end
 
     end

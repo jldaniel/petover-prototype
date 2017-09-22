@@ -95,7 +95,38 @@ class UsersController < ApplicationController
 
   end
 
+  # POST /:user_id/pets
+  def add_pet
+    puts('Add pet called')
+    puts(params)
+    @user = User.find(params[:user_id])
+    @pet = @user.pets.build(pet_params)
+    if @pet.save
+      render json: @pet
+    else
+      render json: @pet.errors, status: :unprocessable_entity
+    end
+  end
+
+
+
   # GET /:user_id/service
+
+
+  # POST /:user_id/service
+  def add_service
+    puts('Add service called')
+    puts(params)
+    @user = User.find(params[:user_id])
+    @service = @user.services.build(service_params)
+
+    if @service.save
+      render json: @service
+    else
+      render json: @service.errors, status: :unprocessable_entity
+    end
+
+  end
 
   private
     # Use callbacks to share common setup or constraints between actions.
@@ -108,8 +139,17 @@ class UsersController < ApplicationController
       params.require(:user)
     end
 
+
     def user_update_params
       params.require(:user).permit(:first_name, :last_name, :about_me)
+    end
+
+    def pet_params
+      params.require(:pet).permit(:name, :about_me, :animal)
+    end
+
+    def service_params
+      params.require(:service).permit(:name, :about, :rate, :rate_type)
     end
 
     def get_user_pets(user)
