@@ -19,6 +19,8 @@ import {LoginService} from './util/login.service';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {RegisterComponent} from './register/register.component';
 import {PetsComponent} from './pets/pets.component';
+import {ServicesComponent} from './services/services.component';
+
 
 // TODO Routing is broken for login and about
 const appRoutes: Routes = [
@@ -31,6 +33,7 @@ const appRoutes: Routes = [
     ]},
   { path: 'login', component: LoginComponent },
   { path: 'dashboard/pets', component: PetsComponent },
+  { path: 'dashboard/services', component: ServicesComponent },
   { path: 'dashboard', component: DashboardComponent }, // todo add in a dashboard component
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/beta', pathMatch: 'full' },
@@ -47,6 +50,7 @@ const appRoutes: Routes = [
     LoginComponent,
     DashboardComponent,
     PetsComponent,
+    ServicesComponent,
     RegisterComponent
   ],
   imports: [
