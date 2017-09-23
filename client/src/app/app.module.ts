@@ -32,8 +32,8 @@ const appRoutes: Routes = [
       { path: 'about', component: AboutComponent }
     ]},
   { path: 'login', component: LoginComponent },
-  { path: 'dashboard/pets', component: PetsComponent },
-  { path: 'dashboard/services', component: ServicesComponent },
+  { path: 'pets', component: PetsComponent },
+  { path: 'services', component: ServicesComponent },
   { path: 'dashboard', component: DashboardComponent }, // todo add in a dashboard component
   { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/beta', pathMatch: 'full' },
