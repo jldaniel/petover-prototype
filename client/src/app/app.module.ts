@@ -28,6 +28,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 import { StayoversComponent } from './stayovers/stayovers.component';
 import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component';
+import {AddpetComponent} from './addpet/addpet.component';
+import {AddserviceComponent} from './addservice/addservice.component';
 
 
 @NgModule({
@@ -46,7 +48,9 @@ import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component'
     EditprofileComponent,
     MessagesComponent,
     StayoversComponent,
-    CaretakerinfoComponent
+    CaretakerinfoComponent,
+    AddpetComponent,
+    AddserviceComponent
   ],
   imports: [
     BrowserModule,

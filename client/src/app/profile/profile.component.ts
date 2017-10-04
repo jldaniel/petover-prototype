@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { LoginService } from '../util/login.service';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 import { User } from '../api/User';
 
 @Component({
@@ -12,18 +11,27 @@ import { User } from '../api/User';
 export class ProfileComponent implements OnInit {
   public user: User;
 
-  constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
+  constructor(private api: ApiService, private route: ActivatedRoute) {
 
   }
 
   ngOnInit(): void {
-    this.api.getUser(this.loginService.userId)
-      .then(user => this.user = user)
-      .catch(error => {
-        console.log('Error getting user profile');
-        console.log(error);
-        // TODO Handle this case, redirect to the home page maybe.
-      });
+    // Get the user id from the url parameter and retrieve the user
+    this.route.params.subscribe(params => {
+      console.log(params);
+      console.log(params['id']);
+
+      const userId = params['id'];
+
+      this.api.getUser(userId)
+        .then(user => this.user = user)
+        .catch(error => {
+          console.log('Error getting the user profile for user id: ' + userId);
+          console.log(error);
+          // TODO Handle this error and perform a redirect
+        });
+    });
+
   }
 
 }

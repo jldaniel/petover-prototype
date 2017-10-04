@@ -1,5 +1,5 @@
 
-<div *ngFor="let user of users">
+<div *ngFor="let user of users" [routerLink]="['/profile', user.id]">
       <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
         <div class="row">
           <div class="col-md-4">

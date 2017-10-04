@@ -15,6 +15,8 @@ import { AboutComponent } from './about/about.component';
 import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page404/404.component';
+import {AddpetComponent} from './addpet/addpet.component';
+import {AddserviceComponent} from './addservice/addservice.component';
 
 
 // TODO: To drop the beta login, redirect the root path to home
@@ -32,7 +34,9 @@ const routes: Routes = [
   { path: 'pets', component: PetsComponent },
   { path: 'stayovers', component: StayoversComponent },
   { path: 'services', component:  ServicesComponent },
-  { path: 'edit', component: EditprofileComponent },
+  { path: 'editprofile', component: EditprofileComponent },
+  { path: 'addpet', component: AddpetComponent },
+  { path: 'addservice', component: AddserviceComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 
