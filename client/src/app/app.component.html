@@ -1,1 +1,79 @@
+<!-- nav -->
+<div *ngIf="displayNav">
+  <nav class="navbar navbar-default fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <div class="container">
+          <a [routerLink]="['/home']">
+          <img class="navbar-header pull-left" src="../../assets/nav-logo.PNG" alt="logo placeholder" style="width: 5%">
+          </a>
+
+          <ul class="navbar-form navbar-left form-group has-feedback has-feedback-left">
+            <p>Find a place for your pet to stay</p>
+            <li class="input-group">
+              <input type="text" class="form-control" id="location" placeholder="Where" />
+              <i class="form-control-feedback glyphicon glyphicon-globe"></i>
+            </li>
+            <li class="input-group">
+              <input type="date" class="form-control" id="date" placeholder="When" />
+              <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
+            </li>
+            <select class="selectpicker form-control">
+              <option>Dog</option>
+              <option>Cat</option>
+              <option>Lizard</option>
+            </select>
+            <button class="btn navbar-btn">
+              Search!
+            </button>
+          </ul>
+        </div>
+
+      </div>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a [routerLink]="['/about']">About</a></li>
+        <li><a [routerLink]="['/caretakerinfo']">Become a Caretaker</a></li>
+        <li *ngIf="!loginService.loggedIn"><a routerLink="/login">Login</a></li>
+        <li *ngIf="loginService.loggedIn"><a [routerLink]="['/dashboard']">Dashboard</a></li>
+        <li *ngIf="loginService.loggedIn"><a (click)="loginService.logoutUser()">Logout</a></li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+
+<!-- dashboard -->
+<div *ngIf="displayDashboard">
+<div class="container-fluid navbar-default"style="border: 3px solid">
+  <ul class="nav navbar-nav">
+    <li><a [routerLink]="['/dashboard']" routerLinkActive="active">Dashboard</a></li>
+    <li><a [routerLink]="['/myprofile']" routerLinkActive="active">View Profile</a></li>
+    <li><a [routerLink]="['/messages']" routerLinkActive="active">Inbox</a></li>
+    <li><a [routerLink]="['/pets']" routerLinkActive="active">Your Pets</a></li>
+    <li><a [routerLink]="['/stayovers']" routerLinkActive="active">Your Stayovers</a></li>
+    <li><a [routerLink]="['/services']" routerLinkActive="active">Your Services</a></li>
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
+      <ul class="dropdown-menu">
+        <li><a href="#">Update Profile</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Add Pet</a></li>
+        <li role="separator" class="divider"></li>
+        <li><a href="#">Add Service</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+</div>
+
+
+<!-- content -->
 <router-outlet></router-outlet>
+
+
+<!-- footer -->
+<div>
+<footer>
+  <p>&copy; PetOver 2017</p>
+</footer>
+</div>

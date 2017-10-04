@@ -1,58 +1,3 @@
-<nav class="navbar navbar-default navbar-fixed-top">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <div class="container">
-        <img class="navbar-header pull-left" src="../../assets/nav-logo.PNG" alt="logo placeholder" style="width: 5%">
-
-        <ul class="navbar-form navbar-left form-group has-feedback has-feedback-left">
-          <p>Find a place for your pet to stay</p>
-          <li class="input-group">
-            <input type="text" class="form-control" id="location" placeholder="Where" />
-            <i class="form-control-feedback glyphicon glyphicon-globe"></i>
-          </li>
-          <li class="input-group">
-            <input type="date" class="form-control" id="date" placeholder="When" />
-            <i class="form-control-feedback glyphicon glyphicon-calendar"></i>
-          </li>
-          <select class="selectpicker form-control">
-            <option>Dog</option>
-            <option>Cat</option>
-            <option>Lizard</option>
-          </select>
-          <button class="btn navbar-btn">
-            Search!
-          </button>
-        </ul>
-
-      </div>
-
-    </div>
-    <ul class="nav navbar-nav navbar-right">
-      <li><a [routerLink]="['/about']">About</a></li>
-      <li *ngIf="loginService.loggedIn"><a (click)="loginService.logoutUser()">Logout</a></li>
-    </ul>
-  </div>
-  <div class="container-fluid navbar-default"style="border: 3px solid">
-    <ul class="nav navbar-nav">
-      <li><a [routerLink]="['/dashboard']">Dashboard</a></li>
-      <li><a href="#">View Profile</a></li>
-      <li><a href="#">Inbox</a></li>
-      <li><a [routerLink]="['/pets']">Your Pets</a></li>
-      <li><a href="#">Your Stayovers</a></li>
-      <li class="active"><a [routerLink]="['/services']">Your Services<span class="sr-only">(current)</span></a></li>
-      <li class="dropdown">
-        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Profile <span class="caret"></span></a>
-        <ul class="dropdown-menu">
-          <li><a href="#">Update Profile</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Add Pet</a></li>
-          <li role="separator" class="divider"></li>
-          <li><a href="#">Add Service</a></li>
-        </ul>
-      </li>
-    </ul>
-  </div>
-</nav>
 
 <div class="container" style="margin: 10% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
   <div *ngFor="let service of user.services" class="row">
@@ -68,11 +13,7 @@
     <div class="col-md-4 col-md-offset-4">
       <p>{{service.about}}</p>
     </div>
-
-
   </div>
-
-
 </div>
 
 

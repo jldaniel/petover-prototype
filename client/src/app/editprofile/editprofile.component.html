@@ -1,0 +1,8 @@
+<div>
+  <form (ngSubmit)="f.form.valid && updateProfile()" #f="ngForm" novalidate>
+    <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="updatedFirstName">
+    <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="updatedLastName">
+    <input type="text" placeholder="About Me" name="aboutMe" [(ngModel)]="updatedAboutMe">
+    <button type="submit">Update Profile</button>
+  </form>
+</div>

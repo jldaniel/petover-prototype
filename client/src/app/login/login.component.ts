@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {ApiService} from '../api/api.service';
+import { ApiService } from '../api/api.service';
 import { LoginService } from '../util/login.service';
 import { User } from '../api/User';
 
@@ -15,7 +15,7 @@ export class LoginComponent {
 
 
   constructor(private router: Router, private api: ApiService, private loginService: LoginService) {
-    console.log('AboutComponent.constructor called');
+    console.log('LoginComponent.constructor called');
   }
 
   login(): void {

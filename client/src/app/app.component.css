@@ -1,4 +1,8 @@
 
 nav {
-  padding-top: 2rem;
+  padding-top: 0px;
+}
+
+nav a.active {
+  color: #039be5;
 }
