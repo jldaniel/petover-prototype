@@ -1,3 +1,9 @@
 <div>
-  <h3>Add Service</h3>
+  <form (ngSubmit)="f.form.valid && addService()" #f="ngForm" novalidate>
+    <input type="text" placeholder="Service Name" name="serviceName" [(ngModel)]="serviceName">
+    <input type="text" placeholder="About" name="serviceAbout" [(ngModel)]="serviceAbout">
+    <input type="number" placeholder="Rate" name="serviceRate" [(ngModel)]="serviceRate">
+    <input type="text" placeholder="Rate Type" name="serviceRateType" [(ngModel)]="serviceRateType">
+    <button type="submit">Add Service</button>
+  </form>
 </div>

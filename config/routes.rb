@@ -21,12 +21,14 @@ Rails.application.routes.draw do
         get '/' => 'users#index_pet'
         get '/:id' => 'users#show_pet'
         post '/' => 'users#add_pet'
+        put '/:id' => 'users#update_pet'
       end
 
       scope '/:user_id/services' do
         get '/' => 'users#index_service'
         get '/:id' => 'users#show_service'
         post '/' => 'users#add_service'
+        put '/:id' => 'users#update_service'
       end
 
     end

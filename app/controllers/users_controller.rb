@@ -92,7 +92,8 @@ class UsersController < ApplicationController
 
   # GET /:user_id/pets/:id
   def show_pet
-
+    @pet = Pet.find(params[:id])
+    render json: @pet
   end
 
   # POST /:user_id/pets
@@ -108,10 +109,28 @@ class UsersController < ApplicationController
     end
   end
 
+  # PUT /:user_id/pets/:id/pets
+  def update_pet
+    puts('Update pet called')
+    puts(params)
+    @pet = Pet.find(params[:id])
+    puts(user_update_params)
+
+    if @pet.update_attributes(pet_update_params)
+      render json:@pet
+    else
+      render json: @pet.errors, status: :unprocessable_entity
+    end
+  end
 
 
   # GET /:user_id/service
 
+  # GET /:user_id/service/:id
+  def show_service
+    @service = Service.find(params[:id])
+    render json:@service
+  end
 
   # POST /:user_id/service
   def add_service
@@ -125,7 +144,20 @@ class UsersController < ApplicationController
     else
       render json: @service.errors, status: :unprocessable_entity
     end
+  end
 
+  # PUT /:user_id/service/:id
+  def update_service
+    puts('Update service called')
+    puts(params)
+    @service = Service.find(params[:id])
+    puts(service_update_params)
+
+    if @service.update_attributes(service_update_params)
+      render json:@service
+    else
+      render json: @service.errors, status: :unprocessable_entity
+    end
   end
 
   private
@@ -139,7 +171,6 @@ class UsersController < ApplicationController
       params.require(:user)
     end
 
-
     def user_update_params
       params.require(:user).permit(:first_name, :last_name, :about_me)
     end
@@ -148,7 +179,15 @@ class UsersController < ApplicationController
       params.require(:pet).permit(:name, :about_me, :animal)
     end
 
+    def pet_update_params
+      params.require(:pet).permit(:name, :about_me, :animal)
+    end
+
     def service_params
+      params.require(:service).permit(:name, :about, :rate, :rate_type)
+    end
+
+    def service_update_params
       params.require(:service).permit(:name, :about, :rate, :rate_type)
     end
 

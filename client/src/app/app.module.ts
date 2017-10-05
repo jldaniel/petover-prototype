@@ -30,6 +30,8 @@ import { StayoversComponent } from './stayovers/stayovers.component';
 import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component';
 import {AddpetComponent} from './addpet/addpet.component';
 import {AddserviceComponent} from './addservice/addservice.component';
+import {EditpetComponent} from './editpet/editpet.component';
+import {EditserviceComponent} from './editservice/editservice.component';
 
 
 @NgModule({
@@ -50,7 +52,9 @@ import {AddserviceComponent} from './addservice/addservice.component';
     StayoversComponent,
     CaretakerinfoComponent,
     AddpetComponent,
-    AddserviceComponent
+    AddserviceComponent,
+    EditpetComponent,
+    EditserviceComponent
   ],
   imports: [
     BrowserModule,

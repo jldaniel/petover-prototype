@@ -110,7 +110,7 @@ export class ApiService {
    * @param {string} about_me The about me section of the user to update
    * @returns {Promise<any | never | User>}
    */
-  updateUser(userId: number, first_name: string, last_name: string, about_me: string) {
+  updateUser(userId: number, first_name: string, last_name: string, about_me: string): Promise<User> {
     console.log('ApiService.updateUser called');
 
     const body = {
@@ -136,17 +136,21 @@ export class ApiService {
    * @param {string} animal The type of animal that the pet is
    * @returns {Promise<any | never | Pet>}
    */
-  newPet(userId: number, name: string, about_me: string, animal: string) {
+  newPet(userId: number, name: string, about_me: string, animal: string): Promise<Pet> {
     console.log('ApiService.newPet called');
     // TODO Authentication handling
     const url = this.usersUrl + '/' + userId + '/pets';
 
     // TODO: The construction of the Pet model should be handled someplace else
-    const body = { 'pets': {
+    const body = { 'pet': {
       'name': name,
       'about_me': about_me,
       'animal': animal
     }};
+
+
+    console.log('newPet request body');
+    console.log(body);
 
     const headers = this.createHeaders();
 
@@ -154,6 +158,54 @@ export class ApiService {
       .toPromise()
       .then(response => response.json() as Pet)
       .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Get the specified pet
+   * @param {number} userId
+   * @param {number} petId
+   * @returns {Promise<any | never | Pet>}
+   */
+  getPet(userId: number, petId: number) {
+    console.log('ApiService.getPet called');
+    const url = this.usersUrl + '/' + userId + '/pets' + petId;
+    const headers = this.createHeaders();
+
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Pet)
+      .catch(error => this.handleError(error));
+
+
+  }
+
+  /**
+   * Update a pet resource
+   *
+   * @param {number} userId
+   * @param {number} petId
+   * @param {string} name
+   * @param {string} about_me
+   * @param {string} animal
+   * @returns {Promise<any>}
+   */
+  updatePet(userId: number, petId: number, name: string, about_me: string, animal: string): Promise<any> {
+    console.log('ApiService.updatePet called');
+
+    const body = { 'pet': {
+      'name': name,
+      'about_me': about_me,
+      'animal': animal
+    }};
+
+    const headers = this.createHeaders();
+    const url = this.usersUrl + '/' + userId + '/pets/' + petId;
+
+    return this.http.put(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Pet)
+      .catch(error => this.handleError(error));
+
   }
 
   /**
@@ -166,7 +218,7 @@ export class ApiService {
    * @param {number} rate_type The rate type, either hourly, once, or daily
    * @returns {Promise<any | never | Service>}
    */
-  newService(userId: number, name: string, about: string, rate: number, rate_type: number) {
+  newService(userId: number, name: string, about: string, rate: number, rate_type: string) {
     console.log('ApiService.newService called');
     // TODO: Authentication handling
     const url = this.usersUrl + '/' + userId + '/services';
@@ -182,6 +234,52 @@ export class ApiService {
     const headers = this.createHeaders();
 
     return this.http.post(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Service)
+      .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Get the specified service
+   * @param {number} userId
+   * @param {number} serviceId
+   * @returns {Promise<any | never | Service>}
+   */
+  getService(userId: number, serviceId: number) {
+    console.log('ApiService.getService called');
+    const url = this.usersUrl + '/' + userId + '/services/' + serviceId;
+    const headers = this.createHeaders();
+
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Service)
+      .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Update the specified service
+   * @param {number} userId
+   * @param {number} serviceId
+   * @param {string} name
+   * @param {string} about
+   * @param {number} rate
+   * @param {string} rate_type
+   * @returns {Promise<Service>}
+   */
+  updateService(userId: number, serviceId: number, name: string, about: string, rate: number, rate_type: string): Promise<Service> {
+    console.log('ApiService.updateService called');
+
+    const body = { 'service': {
+      'name': name,
+      'about': about,
+      'rate': rate,
+      'rate_type': rate_type
+    }};
+
+    const url = this.usersUrl + '/' + userId + '/services/' + serviceId;
+    const headers = this.createHeaders();
+
+    return this.http.put(url, body, {headers: headers})
       .toPromise()
       .then(response => response.json() as Service)
       .catch(error => this.handleError(error));

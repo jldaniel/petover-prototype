@@ -1,3 +1,8 @@
 <div>
-  <h3>Add Pet</h3>
+  <form (ngSubmit)="f.form.valid && addPet()" #f="ngForm" novalidate>
+    <input type="text" placeholder="Pet Name" name="petName" [(ngModel)]="petName">
+    <input type="text" placeholder="About Me" name="petAboutMe" [(ngModel)]="petAboutMe">
+    <input type="text" placeholder="Type of Animal" name="petAnimal" [(ngModel)]="petAnimal">
+    <button type="submit">Add Pet</button>
+  </form>
 </div>
