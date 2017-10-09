@@ -172,23 +172,23 @@ class UsersController < ApplicationController
     end
 
     def user_update_params
-      params.require(:user).permit(:first_name, :last_name, :about_me)
+      params.require(:user).permit(:first_name, :last_name, :about_me, :picture)
     end
 
     def pet_params
-      params.require(:pet).permit(:name, :about_me, :animal)
+      params.require(:pet).permit(:name, :about_me, :animal, :picture)
     end
 
     def pet_update_params
-      params.require(:pet).permit(:name, :about_me, :animal)
+      params.require(:pet).permit(:name, :about_me, :animal, :picture)
     end
 
     def service_params
-      params.require(:service).permit(:name, :about, :rate, :rate_type)
+      params.require(:service).permit(:name, :about, :rate, :rate_type, :picture)
     end
 
     def service_update_params
-      params.require(:service).permit(:name, :about, :rate, :rate_type)
+      params.require(:service).permit(:name, :about, :rate, :rate_type, :picture)
     end
 
     def get_user_pets(user)

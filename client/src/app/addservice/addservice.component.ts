@@ -14,6 +14,7 @@ export class AddserviceComponent {
   public serviceRate: number;
   public serviceRateType: string;
   public newServiceError = false;
+  public base64Image = '';
 
   constructor(private router: Router, private api: ApiService, public loginService: LoginService) {
 
@@ -22,7 +23,8 @@ export class AddserviceComponent {
   public addService(): void {
     console.log('AddserviceComponent.addService called');
     this.resetState();
-    this.api.newService(this.loginService.userId, this.serviceName, this.serviceAbout, this.serviceRate, this.serviceRateType)
+    this.api.newService(this.loginService.userId, this.serviceName,
+      this.serviceAbout, this.serviceRate, this.serviceRateType, this.base64Image)
       .then(response => {
         console.log('New service created');
         console.log(response);
@@ -33,6 +35,31 @@ export class AddserviceComponent {
         this.newServiceError = true;
     });
   }
+
+  attachImage(fileInput: any) {
+    const fileList: FileList = fileInput.target.files;
+    console.log('File name = ' + fileList[0].name);
+    console.log('File size = ' + fileList[0].size);
+    console.log('File = ' + fileList[0]);
+
+    this.convertFileToBase64AndSet(fileList);
+
+  }
+
+  convertFileToBase64AndSet(fileList: FileList) {
+    if (fileList.length > 0) {
+      const reader = new FileReader();
+
+      reader.onloadend = (e: Event) => {
+
+        console.log(reader.result);
+        this.base64Image = reader.result;
+      };
+
+      reader.readAsDataURL(fileList[0]);
+    }
+  }
+
 
   private resetState(): void {
     console.log('AddserviceComponent.resetState called');

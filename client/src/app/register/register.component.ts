@@ -51,6 +51,7 @@ export class RegisterComponent {
 
   }
 
+
   /**
    * Reset the registration form state
    */

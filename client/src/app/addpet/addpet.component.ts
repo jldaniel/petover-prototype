@@ -14,6 +14,7 @@ export class AddpetComponent {
   public petAboutMe: string;
   public petAnimal: string;
   public newPetError = false;
+  public base64Image = '';
 
 
   constructor(private router: Router, private api: ApiService, public loginService: LoginService) {
@@ -23,7 +24,7 @@ export class AddpetComponent {
   public addPet(): void {
     console.log('AddpetComponent.addPet called');
     this.resetState();
-    this.api.newPet(this.loginService.userId, this.petName, this.petAboutMe, this.petAnimal)
+    this.api.newPet(this.loginService.userId, this.petName, this.petAboutMe, this.petAnimal, this.base64Image)
       .then(response => {
         console.log('New pet created');
         console.log(response);
@@ -34,6 +35,30 @@ export class AddpetComponent {
         this.newPetError = true;
     });
 
+  }
+
+  attachImage(fileInput: any) {
+    const fileList: FileList = fileInput.target.files;
+    console.log('File name = ' + fileList[0].name);
+    console.log('File size = ' + fileList[0].size);
+    console.log('File = ' + fileList[0]);
+
+    this.convertFileToBase64AndSet(fileList);
+
+  }
+
+  convertFileToBase64AndSet(fileList: FileList) {
+    if (fileList.length > 0) {
+      const reader = new FileReader();
+
+      reader.onloadend = (e: Event) => {
+
+        console.log(reader.result);
+        this.base64Image = reader.result;
+      };
+
+      reader.readAsDataURL(fileList[0]);
+    }
   }
 
   private resetState(): void {

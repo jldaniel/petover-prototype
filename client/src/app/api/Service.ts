@@ -1,3 +1,5 @@
+import {Picture} from './Picture';
+
 export class Service {
   id: number;
   user_id: number;
@@ -9,6 +11,7 @@ export class Service {
   rating: number;
   create_at: string;
   updated_at: string;
+  picture: Picture = null;
 
   profile_image_url: string;
 }

@@ -1,5 +1,6 @@
 import {Service} from './Service';
 import {Pet} from './Pet';
+import {Picture} from './Picture';
 
 export class User {
   id: number;
@@ -12,6 +13,7 @@ export class User {
   updated_at: string;
   pets: Pet[] = null;
   services: Service[] = null;
+  picture: Picture = null;
 
   getProfileImageUrl(): string {
     return '/assets' + this.img_url;

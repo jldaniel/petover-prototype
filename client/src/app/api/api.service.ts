@@ -110,18 +110,21 @@ export class ApiService {
    * @param {string} about_me The about me section of the user to update
    * @returns {Promise<any | never | User>}
    */
-  updateUser(userId: number, first_name: string, last_name: string, about_me: string): Promise<User> {
+  updateUser(userId: number, first_name: string, last_name: string, about_me: string, picture: string): Promise<User> {
     console.log('ApiService.updateUser called');
+
+    const url = this.usersUrl + '/' + userId;
 
     const body = {
       'first_name': first_name,
       'last_name': last_name,
-      'about_me': about_me
+      'about_me': about_me,
+      'picture': picture
     };
 
     const headers = this.createHeaders();
 
-    return this.http.put(this.usersUrl, body, {headers: headers})
+    return this.http.put(url, body, {headers: headers})
       .toPromise()
       .then(response => response.json() as User)
       .catch(error => this.handleError(error));
@@ -134,9 +137,10 @@ export class ApiService {
    * @param {string} name The name of the pet
    * @param {string} about_me Information about the pet
    * @param {string} animal The type of animal that the pet is
+   * @param {string} the base 64 encoded picture as a string
    * @returns {Promise<any | never | Pet>}
    */
-  newPet(userId: number, name: string, about_me: string, animal: string): Promise<Pet> {
+  newPet(userId: number, name: string, about_me: string, animal: string, picture: string): Promise<Pet> {
     console.log('ApiService.newPet called');
     // TODO Authentication handling
     const url = this.usersUrl + '/' + userId + '/pets';
@@ -145,7 +149,8 @@ export class ApiService {
     const body = { 'pet': {
       'name': name,
       'about_me': about_me,
-      'animal': animal
+      'animal': animal,
+      'picture': picture
     }};
 
 
@@ -218,7 +223,7 @@ export class ApiService {
    * @param {number} rate_type The rate type, either hourly, once, or daily
    * @returns {Promise<any | never | Service>}
    */
-  newService(userId: number, name: string, about: string, rate: number, rate_type: string) {
+  newService(userId: number, name: string, about: string, rate: number, rate_type: string, picture: string) {
     console.log('ApiService.newService called');
     // TODO: Authentication handling
     const url = this.usersUrl + '/' + userId + '/services';
@@ -228,7 +233,8 @@ export class ApiService {
       'name': name,
       'about': about,
       'rate': rate,
-      'rate_type': rate_type
+      'rate_type': rate_type,
+      'picture': picture
     }};
 
     const headers = this.createHeaders();
