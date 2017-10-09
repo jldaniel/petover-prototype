@@ -19,13 +19,16 @@ export class EditprofileComponent implements OnInit {
   public profileUpdateError = false;
   public base64Image = '';
 
-  constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
+  constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute, private router: Router) {
 
   }
 
   updateProfile(): void {
     this.api.updateUser(this.user.id, this.updatedFirstName, this.updatedLastName, this.updatedAboutMe, this.base64Image)
-      .then(response => this.user = response) // redirect to the dashboard
+      .then(response => {
+        console.log('Update profile success');
+        this.router.navigate(['/profile', this.loginService.userId]);
+      }) // redirect to the dashboard
       .catch(error => this.profileUpdateError = true);
   }
 

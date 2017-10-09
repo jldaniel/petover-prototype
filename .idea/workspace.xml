@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/users_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/users_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/api/api.service.ts" afterPath="$PROJECT_DIR$/client/src/app/api/api.service.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editpet/editpet.component.html" afterPath="$PROJECT_DIR$/client/src/app/editpet/editpet.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editpet/editpet.component.ts" afterPath="$PROJECT_DIR$/client/src/app/editpet/editpet.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editservice/editservice.component.html" afterPath="$PROJECT_DIR$/client/src/app/editservice/editservice.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/editservice/editservice.component.ts" afterPath="$PROJECT_DIR$/client/src/app/editservice/editservice.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/pets/pets.component.html" afterPath="$PROJECT_DIR$/client/src/app/pets/pets.component.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/services/services.component.html" afterPath="$PROJECT_DIR$/client/src/app/services/services.component.html" />
-    </list>
+    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -128,8 +119,8 @@
     <handled-path value="$PROJECT_DIR$/client/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="175" />
-    <option name="y" value="37" />
+    <option name="x" value="282" />
+    <option name="y" value="168" />
     <option name="width" value="1656" />
     <option name="height" value="889" />
   </component>
@@ -360,15 +351,15 @@
       <workItem from="1507046845435" duration="34000" />
       <workItem from="1507049030318" duration="9212000" />
       <workItem from="1507494429286" duration="6770000" />
-      <workItem from="1507517656574" duration="739000" />
+      <workItem from="1507517656574" duration="807000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="52818000" />
+    <option name="totallyTimeSpent" value="52886000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="175" y="37" width="1656" height="889" extended-state="0" />
+    <frame x="282" y="168" width="1656" height="889" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25652173" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />

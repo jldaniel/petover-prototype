@@ -115,12 +115,12 @@ export class ApiService {
 
     const url = this.usersUrl + '/' + userId;
 
-    const body = {
+    const body = { 'user': {
       'first_name': first_name,
       'last_name': last_name,
       'about_me': about_me,
       'picture': picture
-    };
+    }};
 
     const headers = this.createHeaders();
 
