@@ -173,7 +173,7 @@ export class ApiService {
    */
   getPet(userId: number, petId: number) {
     console.log('ApiService.getPet called');
-    const url = this.usersUrl + '/' + userId + '/pets' + petId;
+    const url = this.usersUrl + '/' + userId + '/pets/' + petId;
     const headers = this.createHeaders();
 
     return this.http.get(url, {headers: headers})
@@ -194,13 +194,14 @@ export class ApiService {
    * @param {string} animal
    * @returns {Promise<any>}
    */
-  updatePet(userId: number, petId: number, name: string, about_me: string, animal: string): Promise<any> {
+  updatePet(userId: number, petId: number, name: string, about_me: string, animal: string, picture: string): Promise<any> {
     console.log('ApiService.updatePet called');
 
     const body = { 'pet': {
       'name': name,
       'about_me': about_me,
-      'animal': animal
+      'animal': animal,
+      'picture': picture
     }};
 
     const headers = this.createHeaders();
@@ -272,14 +273,16 @@ export class ApiService {
    * @param {string} rate_type
    * @returns {Promise<Service>}
    */
-  updateService(userId: number, serviceId: number, name: string, about: string, rate: number, rate_type: string): Promise<Service> {
+  updateService(userId: number, serviceId: number, name: string,
+                about: string, rate: number, rate_type: string, picture: string): Promise<Service> {
     console.log('ApiService.updateService called');
 
     const body = { 'service': {
       'name': name,
       'about': about,
       'rate': rate,
-      'rate_type': rate_type
+      'rate_type': rate_type,
+      'picture': picture
     }};
 
     const url = this.usersUrl + '/' + userId + '/services/' + serviceId;

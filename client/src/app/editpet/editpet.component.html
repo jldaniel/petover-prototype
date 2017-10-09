@@ -3,6 +3,7 @@
     <input type="text" placeholder="Name" name="petName" [(ngModel)]="updatedName">
     <input type="text" placeholder="About Me" name="petAboutMe" [(ngModel)]="updatedAboutMe">
     <input type="text" placeholder="Animal Type" name="petAnimal" [(ngModel)]="updatedAnimal">
+    <input type="file" accept="image/*" (change)="attachImage($event)">
     <button type="submit">Update Pet</button>
   </form>
 </div>

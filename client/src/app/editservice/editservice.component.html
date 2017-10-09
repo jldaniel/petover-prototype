@@ -4,6 +4,7 @@
     <input type="text" placeholder="About" name="serviceAbout" [(ngModel)]="updatedAbout">
     <input type="number" placeholder="Rate" name="serviceRate" [(ngModel)]="updatedRate">
     <input type="text" placeholder="Rate Type" name="serviceRateType" [(ngModel)]="updatedRateType">
+    <input type="file" accept="image/*" (change)="attachImage($event)">
     <button type="submit">Update Service</button>
   </form>
 </div>

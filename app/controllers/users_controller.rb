@@ -114,7 +114,7 @@ class UsersController < ApplicationController
     puts('Update pet called')
     puts(params)
     @pet = Pet.find(params[:id])
-    puts(user_update_params)
+    puts(pet_update_params)
 
     if @pet.update_attributes(pet_update_params)
       render json:@pet

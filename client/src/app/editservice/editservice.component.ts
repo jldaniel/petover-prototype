@@ -19,6 +19,7 @@ export class EditserviceComponent implements OnInit {
   public updatedRate: number;
   public updatedRateType: string;
   public serviceUpdateError = false;
+  public base64Image = '';
 
   constructor
   (
@@ -38,7 +39,8 @@ export class EditserviceComponent implements OnInit {
       this.updatedName,
       this.updatedAbout,
       this.updatedRate,
-      this.updatedRateType
+      this.updatedRateType,
+      this.base64Image
     )
       .then(response => {
         console.log('UpdateService success');
@@ -48,6 +50,30 @@ export class EditserviceComponent implements OnInit {
         console.error(error);
         this.serviceUpdateError = true;
     });
+  }
+
+  attachImage(fileInput: any) {
+    const fileList: FileList = fileInput.target.files;
+    console.log('File name = ' + fileList[0].name);
+    console.log('File size = ' + fileList[0].size);
+    console.log('File = ' + fileList[0]);
+
+    this.convertFileToBase64AndSet(fileList);
+
+  }
+
+  convertFileToBase64AndSet(fileList: FileList) {
+    if (fileList.length > 0) {
+      const reader = new FileReader();
+
+      reader.onloadend = (e: Event) => {
+
+        console.log(reader.result);
+        this.base64Image = reader.result;
+      };
+
+      reader.readAsDataURL(fileList[0]);
+    }
   }
 
   ngOnInit(): void {
