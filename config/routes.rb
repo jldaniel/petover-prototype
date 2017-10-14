@@ -42,14 +42,20 @@ Rails.application.routes.draw do
       delete '/' => 'pets#destroy'
     end
 
-
-
     scope '/services' do
       get '/' => 'services#index'
       get '/:id' => 'services#show'
       post '/' => 'services#create'
       put '/' => 'services#update'
       delete '/' => 'services#destroy'
+    end
+
+    scope '/requests' do
+      get '/' => 'requests#index'
+      get '/:id' => 'requests#show'
+      post '/' => 'requests#create'
+      put '/:id' => 'requests#update'
+      delete '/:id' => 'requests#destroy'
     end
 
   end
