@@ -295,6 +295,31 @@ export class ApiService {
   }
 
 
+  getRequests(): Promise<Request[]> {
+
+    return null;
+  }
+
+
+  getRequest(): Promise<Request> {
+
+    return null;
+  }
+
+  createRequest(): Promise<Request> {
+    return null;
+  }
+
+  updateRequest(): Promise<Request> {
+    return null;
+  }
+
+  deleteRequest(): Promise<any> {
+    return null;
+  }
+
+
+
   /**
    * Put together the headers for the REST request
    *
