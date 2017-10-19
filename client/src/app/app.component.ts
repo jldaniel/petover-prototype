@@ -61,11 +61,10 @@ export class AppComponent implements OnInit {
 
     });
 
-    btnClick= function () {
-      this.router.navigate(['/search']);
-    };
-
   }
+  srchRoute(): void {
+    this.router.navigate(['/search']);
+  };
 
   ngOnInit(): void {
     console.log('AppComponent.onInit called');
