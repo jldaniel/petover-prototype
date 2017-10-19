@@ -42,8 +42,8 @@ const routes: Routes = [
   { path: 'addservice', component: AddserviceComponent },
   { path: 'editpet/:id', component: EditpetComponent },
   { path: 'editservice/:id', component: EditserviceComponent },
-  { path: '**', component: PageNotFoundComponent },
-  { path: 'search', component: SearchComponent }
+  { path: 'search', component: SearchComponent },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({

@@ -18,6 +18,7 @@ export class SearchComponent {
   services: Service[];
 
   constructor(@Inject(FormBuilder) fb: FormBuilder, private http: Http) {
+    console.log('SearchComponent constructor called');
     this.form = fb.group({
       address: ''
     });

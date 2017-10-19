@@ -4,6 +4,7 @@ import 'rxjs/add/operator/toPromise';
 import {User} from './User';
 import {Pet} from './Pet';
 import {Service} from './Service';
+import { ServiceRequest } from './ServiceRequest';
 
 
 @Injectable()
@@ -295,26 +296,33 @@ export class ApiService {
   }
 
 
-  getRequests(): Promise<Request[]> {
+  /**
+   * Typically used to get all Request
+   * @param {number} userId
+   * @returns {Promise<Request[]>}
+   */
+  getServiceRequests(userId?: number): Promise<ServiceRequest[]> {
+
+
 
     return null;
   }
 
 
-  getRequest(): Promise<Request> {
+  getServiceRequest(requestId: number): Promise<ServiceRequest> {
 
     return null;
   }
 
-  createRequest(): Promise<Request> {
+  createServiceRequest(): Promise<ServiceRequest> {
     return null;
   }
 
-  updateRequest(): Promise<Request> {
+  updateServiceRequest(): Promise<ServiceRequest> {
     return null;
   }
 
-  deleteRequest(): Promise<any> {
+  deleteServiceRequest(): Promise<any> {
     return null;
   }
 

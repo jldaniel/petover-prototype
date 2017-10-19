@@ -32,7 +32,7 @@ import {AddpetComponent} from './addpet/addpet.component';
 import {AddserviceComponent} from './addservice/addservice.component';
 import {EditpetComponent} from './editpet/editpet.component';
 import {EditserviceComponent} from './editservice/editservice.component';
-import {SearchComponent} from "./search/search.component";
+import {SearchComponent} from './search/search.component';
 
 
 @NgModule({
