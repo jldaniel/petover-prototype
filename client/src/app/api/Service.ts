@@ -12,6 +12,8 @@ export class Service {
   create_at: string;
   updated_at: string;
   picture: Picture = null;
+  lat: number;
+  lng: number;
 
   profile_image_url: string;
 }

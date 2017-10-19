@@ -1,0 +1,22 @@
+
+
+<!-- reuse this code to perform -->
+
+<form [formGroup]="form">
+  <div>
+    <input formControlName="address" placeholder="address or zip">
+  </div>
+  <button (click)="getRadServices()">Submit</button>
+
+</form>
+
+
+
+
+
+<div *ngFor="let service of services">
+  <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid;">
+    <h4>Service name: {{service.name}}</h4>
+    <h4>Lattitude: {{service.lat}}  Longitude: {{service.lng}}</h4>
+  </div>
+</div>
