@@ -28,7 +28,7 @@ export class AppComponent implements OnInit {
    * Search bar form
    */
 
-  form: FormGroup;
+  searchForm: FormGroup;
 
   constructor(private router: Router, betaloginService: BetaloginService,
               public loginService: LoginService,
@@ -66,14 +66,16 @@ export class AppComponent implements OnInit {
       }
 
     });
-  this.form = fb.group({
+  this.searchForm = fb.group({
     address:''
   });
 
   }
   searchRoute(): void {
-    console.log(this.form.value['address']);
-    this.router.navigate(['/search']);
+    console.log('AppComponent.searchRoute called');
+    console.log(this.searchForm.value);
+    var filter = this.searchForm.value;
+    this.router.navigate(['/search', filter]);
   };
 
   ngOnInit(): void {

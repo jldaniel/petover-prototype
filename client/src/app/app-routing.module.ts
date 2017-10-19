@@ -43,6 +43,7 @@ const routes: Routes = [
   { path: 'editpet/:id', component: EditpetComponent },
   { path: 'editservice/:id', component: EditserviceComponent },
   { path: 'search', component: SearchComponent },
+  { path: 'search/:filter', component: SearchComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

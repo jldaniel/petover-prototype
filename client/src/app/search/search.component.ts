@@ -1,4 +1,5 @@
 import { Component ,OnInit} from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from '../api/api.service';
 import {Service} from '../api/Service';
 
@@ -11,20 +12,24 @@ import 'rxjs/add/operator/toPromise';
 })
 export class SearchComponent implements OnInit{
   title = 'SEARCH PAGE:';
-  addy = 'Somewhere over the rainbow';
+  addy = '1324 67th Street, Berkeley, CA';
   services: Service[];
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private route: ActivatedRoute) {
     console.log('SearchComponent.constructor called');
   }
 
   ngOnInit(): void {
     console.log('SearchComponent.ngOnInit called');
-    /*
-    Figure out how to pass address from onclick
-    addy = ONCLICKVARIABLE;
-     */
-    this.api.getRadServices(this.addy).then(services => this.services = services);
-    console.log('Retrieved services with addresses within 10 miles')
+    // Get the form submission data
+    this.route.params.subscribe(params => {
+      console.log('GOT THE ADDRESS: ' + params['address']);
+      this.addy = params['address'];
+
+      this.api.getRadServices(this.addy).then(services => this.services = services);
+      console.log('Retrieved services with addresses within 10 miles');
+    });
+
+
   }
 }
