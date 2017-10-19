@@ -12,6 +12,7 @@ class ServicesController < ApplicationController
     puts
 
     begin
+
       @services = Service.within(10, :origin => loc.ll ) # geocode 10 mile radius magic
       render json: @services
     rescue Exception => e
