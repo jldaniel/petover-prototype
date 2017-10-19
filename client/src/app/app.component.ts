@@ -1,7 +1,8 @@
-import {Component, NgZone, OnInit} from '@angular/core';
+import {Component, NgZone, OnInit, Inject, Input} from '@angular/core';
 import { BetaloginService } from './betalogin/betalogin.service';
 import { LoginService } from './util/login.service';
 import {NavigationEnd, NavigationStart, Router} from '@angular/router';
+import {FormBuilder, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -23,11 +24,16 @@ export class AppComponent implements OnInit {
    */
   public displayDashboard = false;
 
+  /**
+   * Search bar form
+   */
 
+  form: FormGroup;
 
   constructor(private router: Router, betaloginService: BetaloginService,
               public loginService: LoginService,
-              private zone: NgZone) {
+              private zone: NgZone,
+              @Inject(FormBuilder) fb: FormBuilder) {
     console.log('AppComponent.constructor called');
     const _that = this;
 
@@ -60,9 +66,12 @@ export class AppComponent implements OnInit {
       }
 
     });
+  this.form = fb.group({
+    address:''
+  });
 
   }
-  srchRoute(): void {
+  searchRoute(): void {
     this.router.navigate(['/search']);
   };
 

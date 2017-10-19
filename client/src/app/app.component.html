@@ -11,7 +11,7 @@
           <ul class="navbar-form navbar-left form-group has-feedback has-feedback-left">
             <p>Find a place for your pet to stay</p>
             <li class="input-group">
-              <input type="text" class="form-control" id="location" placeholder="Where" />
+              <input type="text" class="form-control" formControlName="address" placeholder="Where" />
               <i class="form-control-feedback glyphicon glyphicon-globe"></i>
             </li>
             <li class="input-group">
@@ -23,7 +23,7 @@
               <option>Cat</option>
               <option>Lizard</option>
             </select>
-            <button class="btn navbar-btn" (click)="srchRoute()">
+            <button class="btn navbar-btn" (click)="searchRoute()">
               Search!
             </button>
           </ul>

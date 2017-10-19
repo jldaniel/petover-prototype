@@ -27,6 +27,11 @@ export class ApiService {
    */
   private usersUrl = this.baseUrl + '/users';
 
+  /**
+   * The URL for services API
+   * @type {string}
+   */
+  private serviceUrl = this.baseUrl + '/services';
 
   constructor(private http: Http) {
     console.log('ApiService.constructor called');
@@ -263,6 +268,23 @@ export class ApiService {
       .then(response => response.json() as Service)
       .catch(error => this.handleError(error));
   }
+
+  /**
+   * Get the services that are within 10 miles of the parameter
+   * @param {string} address
+   * @returns {Promise<any | T>}
+   */
+
+  getRadServices(address: string) {
+    const homeUrl = this.serviceUrl + '?addy=' + '\%27' + address + '\%27' ;
+    console.log('AppComponent.getRadServices called');
+    const headers = this.createHeaders();
+    return this.http.get(homeUrl, {headers: headers}).toPromise()
+      .then(response => response.json() as Service[])
+      .catch(error => this.handleError(error));
+  }
+
+
 
   /**
    * Update the specified service
