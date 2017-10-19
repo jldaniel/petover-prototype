@@ -32,7 +32,9 @@ service1 = user1.services.create({
    rate: 100.00,
    rate_type: 'HOURLY',
    picture: Rails.root.join('db/uploads/service/picture/1/picture.png').open,
-   img_url: ''
+   img_url: '',
+   lat: 37.8532684,
+   lng: -122.2904173
 })
 
 # Beth Smith, Horse Surgeon
@@ -52,7 +54,9 @@ service2 = user2.services.create({
    rate: 550.00,
    rate_type: 'ONCE',
    picture: Rails.root.join('db/uploads/service/picture/2/picture.png').open,
-   img_url: '/assets/images/beth_smith/S1e1_horse_surgery.png'
+   img_url: '/assets/images/beth_smith/S1e1_horse_surgery.png',
+   lat: 37.9989152,
+   lng: -121.8859537
 })
 
 
@@ -111,7 +115,9 @@ service3 = user5.services.create({
                                      rate: 1000.00,
                                      rate_type: 'ONCE',
                                      picture: Rails.root.join('db/uploads/service/picture/3/picture.png').open,
-                                     img_url: '/assets/images/' + image_url('')
+                                     img_url: '/assets/images/' + image_url(''),
+                                     lat: 37.8576872,
+                                     lng: -122.2914238
                                  })
 
 
@@ -152,7 +158,9 @@ service4 = user7.services.create({
                                      rate: 20.00,
                                      rate_type: 'HOURLY',
                                      picture: Rails.root.join('db/uploads/service/picture/4/picture.png').open,
-                                     img_url: '/assets/images/' + image_url('')
+                                     img_url: '/assets/images/' + image_url(''),
+                                     lat: 37.8491651,
+                                     lng: -122.2921053
                                  })
 
 # Rick Sanches, cat owner squanchy
@@ -199,7 +207,9 @@ service5 = user9.services.create({
                                      rate: 15.00,
                                      rate_type: 'HOURLY',
                                      picture: Rails.root.join('db/uploads/service/picture/5/picture.png').open,
-                                     img_url: '/assets/images/' + image_url('')
+                                     img_url: '/assets/images/' + image_url(''),
+                                     lat: 37.8384397,
+                                     lng: -122.2625427
                                  })
 
 
