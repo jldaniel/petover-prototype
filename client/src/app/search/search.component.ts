@@ -11,7 +11,7 @@ import 'rxjs/add/operator/toPromise';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent {
-  title = 'SEARCH PAGE:'
+  title = 'SEARCH PAGE:';
   addy = 'Somewhere over the rainbow';
   form: FormGroup;
   private serviceUrl = '/api/services';

@@ -19,6 +19,7 @@ import {AddpetComponent} from './addpet/addpet.component';
 import {AddserviceComponent} from './addservice/addservice.component';
 import {EditpetComponent} from './editpet/editpet.component';
 import {EditserviceComponent} from './editservice/editservice.component';
+import { SearchComponent } from './search/search.component';
 
 
 // TODO: To drop the beta login, redirect the root path to home
@@ -41,7 +42,8 @@ const routes: Routes = [
   { path: 'addservice', component: AddserviceComponent },
   { path: 'editpet/:id', component: EditpetComponent },
   { path: 'editservice/:id', component: EditserviceComponent },
-  { path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PageNotFoundComponent },
+  { path: 'search', component: SearchComponent }
 ];
 
 @NgModule({
