@@ -72,6 +72,7 @@ export class AppComponent implements OnInit {
 
   }
   searchRoute(): void {
+    console.log(this.form.value['address']);
     this.router.navigate(['/search']);
   };
 
