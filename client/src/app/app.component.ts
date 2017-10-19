@@ -61,6 +61,10 @@ export class AppComponent implements OnInit {
 
     });
 
+    btnClick= function () {
+      this.router.navigate(['/search']);
+    };
+
   }
 
   ngOnInit(): void {
