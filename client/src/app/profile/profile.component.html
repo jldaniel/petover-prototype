@@ -21,6 +21,7 @@
           <img src={{service.picture.url}} style="width:100%" class="center-block">
         </div>
         <div class="col-md-4">{{service.rate}}  {{service.rate_type}}</div>
+        <a [routerLink]="['/servicerequest', service.id]">Request Service</a>
       </div>
     </div>
 

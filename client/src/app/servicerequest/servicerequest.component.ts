@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
+import {ActivatedRoute, Router} from '@angular/router';
 import { LoginService } from '../util/login.service';
 import { ApiService } from '../api/api.service';
+import { User } from '../api/User';
+import { Service } from '../api/Service';
 
 
 @Component({
@@ -11,16 +12,47 @@ import { ApiService } from '../api/api.service';
   styleUrls: ['./servicerequest.component.css']
 })
 export class ServicerequestComponent implements OnInit {
-  public requestingUser = null;
-  public providingUser = null;
-  public service = null;
+  public requestingUser: User = null;
+  public providingUser: User = null;
+  public service: Service = null;
 
-  constructor(private loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
+  // Form data
+  public startDate: Date = null;
+  public endDate: Date = null;
+  public message: string = null;
+  public petId: number = null;
 
+  /**
+   * Constructor
+   * @param {LoginService} loginService
+   * @param {ApiService} api
+   * @param {ActivatedRoute} route
+   */
+  constructor(private loginService: LoginService, private api: ApiService, private route: ActivatedRoute, private router: Router) {
   }
 
-  public requestService(): void {
 
+  /**
+   * Called on form submission to submit a service request
+   */
+  public requestService(): void {
+    const requesterId = this.requestingUser.id;
+    const providerId = this.providingUser.id;
+    const serviceId = this.service.id;
+
+
+    this.api.createServiceRequest(requesterId, providerId, serviceId, this.startDate, this.endDate, this.message, this.petId)
+      .then(serviceRequest => {
+        console.log('ServicerequestComponent service request successfully created');
+        console.log(serviceRequest);
+        this.router.navigate(['/stayovers']);
+        // TODO Handle redirection to users dashboard
+      })
+      .catch(error => {
+        // TODO Handle error
+        console.error('ServicerequestComponent error creating service request');
+        console.error(error);
+      });
   }
 
   ngOnInit(): void {

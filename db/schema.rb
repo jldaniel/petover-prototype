@@ -27,14 +27,15 @@ ActiveRecord::Schema.define(version: 20171019004142) do
     t.index ["user_id"], name: "index_pets_on_user_id"
   end
 
-  create_table "requests", force: :cascade do |t|
-    t.integer "requester"
-    t.integer "provider"
-    t.date "start"
-    t.date "end"
+  create_table "service_requests", force: :cascade do |t|
+    t.integer "requester_id"
+    t.integer "provider_id"
+    t.integer "service_id"
+    t.date "start_date"
+    t.date "end_date"
     t.text "message"
-    t.string "state"
-    t.integer "pet"
+    t.string "request_state"
+    t.integer "pet_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

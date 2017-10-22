@@ -39,6 +39,7 @@
           <img src={{service.profile_image_url}} style="width:50%" class="center-block">
         </div>
         <p class="text-center">{{service.rating}}</p>
+        <a [routerLink]="['/servicerequest', service.id]">Request Service</a>
       </div>
       <!-- Middle - About/rate -->
       <div class="col-md-4">

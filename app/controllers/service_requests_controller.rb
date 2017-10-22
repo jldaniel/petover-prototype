@@ -8,10 +8,46 @@ class ServiceRequestsController < ApplicationController
   # GET /api/requests
   def index
     puts 'ServiceRequestsController index called'
+    providerSearchFlag = false
+    requesterSearchFlag = false
+    search_params = request.parameters
 
-    # TODO: Extract the search params if they exist
-    # Allow filtering by requester, provider, and pet
-    @service_requests = ServiceRequest.all
+    puts('search_params')
+    puts(search_params)
+
+    if search_params[:providerId].present?
+      providerSearchFlag = true
+    end
+
+    if search_params[:requesterId].present?
+      requesterSearchFlag = true
+    end
+
+    puts 'Search with provider id '
+    puts providerSearchFlag
+    puts 'Search with requester id '
+    puts requesterSearchFlag
+
+    if providerSearchFlag and requesterSearchFlag
+      puts 'Searching for both provider ID and requestor ID'
+      @service_requests = ServiceRequest.find_by(requester_id: search_params[:requesterId], provider_id: search_params[:providerId])
+
+    elsif providerSearchFlag
+      puts 'Search for just provider ID'
+      @service_requests = ServiceRequest.find_by(provider_id: search_params[:providerId])
+
+    elsif requesterSearchFlag
+      puts 'Search for just requester ID'
+      #@service_requests = ServiceRequest.find_by_requester_id(search_params[requesterId])
+      @service_requests = ServiceRequest.find_by(requester_id: search_params[:requesterId])
+    else
+
+      # TODO: Extract the search params if they exist
+      # Allow filtering by requester, provider, and pet
+      @service_requests = ServiceRequest.all
+
+    end
+
 
     render json: @service_requests
 
