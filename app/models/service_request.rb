@@ -1,4 +1,4 @@
-class Request < ApplicationRecord
+class ServiceRequest < ApplicationRecord
 
 ##
 #  Request Model

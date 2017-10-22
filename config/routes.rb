@@ -50,12 +50,12 @@ Rails.application.routes.draw do
       delete '/' => 'services#destroy'
     end
 
-    scope '/requests' do
-      get '/' => 'requests#index'
-      get '/:id' => 'requests#show'
-      post '/' => 'requests#create'
-      put '/:id' => 'requests#update'
-      delete '/:id' => 'requests#destroy'
+    scope '/servicerequests' do
+      get '/' => 'service_requests#index'
+      get '/:id' => 'service_requests#show'
+      post '/' => 'service_requests#create'
+      put '/:id' => 'service_requests#update'
+      delete '/:id' => 'service_requests#destroy'
     end
 
   end

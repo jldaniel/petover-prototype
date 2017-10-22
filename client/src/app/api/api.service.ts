@@ -33,6 +33,12 @@ export class ApiService {
    */
   private serviceUrl = this.baseUrl + '/services';
 
+  /**
+   * Base URL for the service requests API
+   * @type {string}
+   */
+  private serviceRequestUrl = this.baseUrl + '/servicerequests';
+
   constructor(private http: Http) {
     console.log('ApiService.constructor called');
   }
@@ -258,9 +264,26 @@ export class ApiService {
    * @param {number} serviceId
    * @returns {Promise<any | never | Service>}
    */
-  getService(userId: number, serviceId: number) {
-    console.log('ApiService.getService called');
+  getUserService(userId: number, serviceId: number) {
+    console.log('ApiService.getUserService called');
     const url = this.usersUrl + '/' + userId + '/services/' + serviceId;
+    const headers = this.createHeaders();
+
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Service)
+      .catch(error => this.handleError(error));
+  }
+
+  /**
+   * Get the specified service
+   * @param {number} serviceId The ID of the service to retrieve
+   * @returns {Promise<Service>}
+   */
+  getService(serviceId: number): Promise<Service> {
+    console.log('ApiService.getService called');
+
+    const url = this.baseUrl + '/services/' + serviceId;
     const headers = this.createHeaders();
 
     return this.http.get(url, {headers: headers})
@@ -320,32 +343,114 @@ export class ApiService {
 
   /**
    * Typically used to get all Request
-   * @param {number} userId
-   * @returns {Promise<Request[]>}
+   * @param {number} userId - optional argument to specify a user ID to get all service requests related to that user
+   * @returns {Promise<ServiceRequest[]>}
    */
   getServiceRequests(userId?: number): Promise<ServiceRequest[]> {
 
+    let url = this.serviceRequestUrl;
 
+    if (userId) {
+      url += '?userId=' + userId;
+    }
 
-    return null;
+    const headers = this.createHeaders();
+
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as ServiceRequest[])
+      .catch(error => this.handleError(error));
+
   }
 
 
+  /**
+   * Retrieve the specified request
+   * @param {number} requestId The ID of the request to retrieve
+   * @returns {Promise<ServiceRequest>}
+   */
   getServiceRequest(requestId: number): Promise<ServiceRequest> {
 
-    return null;
+    const url = this.serviceRequestUrl + '/' + requestId;
+
+    const headers = this.createHeaders();
+
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as ServiceRequest)
+      .catch(error => this.handleError(error));
   }
 
-  createServiceRequest(): Promise<ServiceRequest> {
-    return null;
+  /**
+   * Create a new service request
+   * @param {number} requesterId The ID of the user making the request
+   * @param {number} providerId The ID of the user providing the service for the request
+   * @param {number} serviceId The ID of the service
+   * @param {Date} startDate The date to start the requested service
+   * @param {Date} endDate The date to end the requested service
+   * @param {string} message A message to accompany the service request
+   * @param {number} petId The ID of the pet that the service will be provided for
+   * @returns {Promise<ServiceRequest>} The newly created service request
+   */
+  createServiceRequest(requesterId: number, providerId: number, serviceId: number, startDate: Date,
+                       endDate: Date, message: string, petId: number): Promise<ServiceRequest> {
+    const url = this.serviceRequestUrl;
+
+    const headers = this.createHeaders();
+
+    const body = { 'service_request': {
+      requester_id: requesterId,
+      provider_id: providerId,
+      service_id: serviceId,
+      start_date: startDate,
+      end_date: endDate,
+      message: message,
+      request_state: 'REQUESTED',
+      pet_id: petId
+    }};
+
+    return this.http.post(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as ServiceRequest)
+      .catch(error => this.handleError(error));
   }
 
-  updateServiceRequest(): Promise<ServiceRequest> {
-    return null;
+  /**
+   * Update a service request, specifically the state
+   * @param {number} serviceRequestId The ID of the service request to update
+   * @param {string} requestState The new state to update the service request with
+   * @returns {Promise<ServiceRequest>}
+   */
+  updateServiceRequest(serviceRequestId: number, requestState: string): Promise<ServiceRequest> {
+
+    const url = this.serviceRequestUrl + '/' + serviceRequestId;
+
+    const headers = this.createHeaders();
+
+    const body = { 'service_request': {
+      request_state: requestState
+    }};
+
+    return this.http.put(url, body, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as ServiceRequest)
+      .catch(error => this.handleError(error));
   }
 
-  deleteServiceRequest(): Promise<any> {
-    return null;
+  /**
+   * Delete the specified service request
+   * @param {number} serviceRequestId The ID of the service request to delete
+   * @returns {Promise<any>}
+   */
+  deleteServiceRequest(serviceRequestId: number): Promise<any> {
+    const url = this.serviceRequestUrl + '/' + serviceRequestId;
+
+    const headers = this.createHeaders();
+
+    return this.http.delete(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json())
+      .catch(error => this.handleError(error));
   }
 
 

@@ -27,8 +27,30 @@ class ServicesController < ApplicationController
 
   end
 
+  # GET /services/:id
+  def show
+    puts('GET /services/:id')
+    @service = Service.find(params[:id])
 
+    render json: @service
+  end
 
+  # POST /services
+  def create
+
+  end
+
+  # PUT /services/:id
+  def update
+
+  end
+
+  # DELETE /services/:id
+  def destroy
+
+  end
+
+private
 
 
 

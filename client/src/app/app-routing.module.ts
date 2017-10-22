@@ -15,11 +15,12 @@ import { AboutComponent } from './about/about.component';
 import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component';
 import { RegisterComponent } from './register/register.component';
 import { PageNotFoundComponent } from './page404/404.component';
-import {AddpetComponent} from './addpet/addpet.component';
-import {AddserviceComponent} from './addservice/addservice.component';
-import {EditpetComponent} from './editpet/editpet.component';
-import {EditserviceComponent} from './editservice/editservice.component';
+import { AddpetComponent } from './addpet/addpet.component';
+import { AddserviceComponent } from './addservice/addservice.component';
+import { EditpetComponent } from './editpet/editpet.component';
+import { EditserviceComponent } from './editservice/editservice.component';
 import { SearchComponent } from './search/search.component';
+import { ServicerequestComponent } from './servicerequest/servicerequest.component';
 
 
 // TODO: To drop the beta login, redirect the root path to home
@@ -44,6 +45,7 @@ const routes: Routes = [
   { path: 'editservice/:id', component: EditserviceComponent },
   { path: 'search', component: SearchComponent },
   { path: 'search/:filter', component: SearchComponent },
+  { path: 'servicerequest/:id', component: ServicerequestComponent },
   { path: '**', component: PageNotFoundComponent }
 ];
 

@@ -82,7 +82,7 @@ export class EditserviceComponent implements OnInit {
       console.log(params['id']);
 
       const serviceId = params['id'];
-      this.api.getService(this.loginService.userId, serviceId)
+      this.api.getUserService(this.loginService.userId, serviceId)
         .then(service => {
           this.service = service;
           this.updatedName = service.name;
