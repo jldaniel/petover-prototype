@@ -2,6 +2,7 @@
   <form (ngSubmit)="f.form.valid && updateService()" #f="ngForm" novalidate>
     <input type="text" placeholder="Name" name="serviceName" [(ngModel)]="updatedName">
     <input type="text" placeholder="About" name="serviceAbout" [(ngModel)]="updatedAbout">
+    <input type="text" placeholder="Address" name="serviceAddress" [(ngModel)]="updatedAddress">
     <input type="number" placeholder="Rate" name="serviceRate" [(ngModel)]="updatedRate">
     <input type="text" placeholder="Rate Type" name="serviceRateType" [(ngModel)]="updatedRateType">
     <input type="file" accept="image/*" (change)="attachImage($event)">

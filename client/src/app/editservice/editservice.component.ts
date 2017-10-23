@@ -16,6 +16,7 @@ export class EditserviceComponent implements OnInit {
   public service: Service;
   public updatedName: string;
   public updatedAbout: string;
+  public updatedAddress: string:
   public updatedRate: number;
   public updatedRateType: string;
   public serviceUpdateError = false;
@@ -38,6 +39,7 @@ export class EditserviceComponent implements OnInit {
       this.service.id,
       this.updatedName,
       this.updatedAbout,
+      this.updatedAddress,
       this.updatedRate,
       this.updatedRateType,
       this.base64Image

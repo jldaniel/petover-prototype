@@ -195,7 +195,13 @@ class UsersController < ApplicationController
     end
 
     def service_update_params
-      params.require(:service).permit(:name, :about, :address, :rate, :rate_type, :picture)
+      puts("service_update_params called")
+      geocoded_address = MultiGeocoder.geocode(params[:service][:address])
+
+      params.require(:service).permit(
+          :name, :about, :rate, :rate_type, :picture).merge(
+          lat: geocoded_address.lat,
+          lng: geocoded_address.lng)
     end
 
     def get_user_pets(user)

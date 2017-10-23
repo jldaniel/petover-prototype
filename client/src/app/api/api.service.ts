@@ -322,12 +322,13 @@ export class ApiService {
    * @returns {Promise<Service>}
    */
   updateService(userId: number, serviceId: number, name: string,
-                about: string, rate: number, rate_type: string, picture: string): Promise<Service> {
+                about: string, address: string, rate: number, rate_type: string, picture: string): Promise<Service> {
     console.log('ApiService.updateService called');
 
     const body = { 'service': {
       'name': name,
       'about': about,
+      'address': address,
       'rate': rate,
       'rate_type': rate_type,
       'picture': picture
