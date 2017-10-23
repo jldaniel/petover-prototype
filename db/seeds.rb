@@ -17,7 +17,7 @@ include ActionView::Helpers::AssetUrlHelper
 
 # Ants in my eyes Johnson, bad dog walker
 user1 = User.create!({
-  email: 'antsinmyeyes@johnsons_electronics.com',
+  email: 'antsinmyeyes@gmail.com',
   password: 'password',
   first_name: 'Ants In My Eyes',
   last_name: 'Johnson',
@@ -27,10 +27,10 @@ user1 = User.create!({
 })
 
 service1 = user1.services.create({
-   name: 'Dog Walking',
-   about: 'I walk dogs, only $100 per hour, that\'s fair!',
+   name: 'Dog Sitting',
+   about: 'I watch dogs, only $100 per day, that\'s fair!',
    rate: 100.00,
-   rate_type: 'HOURLY',
+   rate_type: 'ONCE',
    picture: Rails.root.join('db/uploads/service/picture/1/picture.png').open,
    img_url: '',
    lat: 37.8532684,

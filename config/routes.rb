@@ -33,7 +33,6 @@ Rails.application.routes.draw do
 
     end
 
-
     scope '/pets' do
       get '/' => 'pets#index'
       get '/:id' => 'pets#show'

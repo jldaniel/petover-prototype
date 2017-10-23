@@ -348,21 +348,23 @@ export class ApiService {
    * @returns {Promise<ServiceRequest[]>}
    */
   getServiceRequests(providerId: number, requesterId: number): Promise<ServiceRequest[]> {
-
-    const url = this.serviceRequestUrl;
+    // TODO This current expects either providerId or requesterId to be provided but not both
+    let url = this.serviceRequestUrl;
     const params: URLSearchParams = new URLSearchParams();
-    if (providerId) {
-      params.set('providerId', providerId.toString());
+    if (providerId != null) {
+      url += '?providerId=' + providerId;
+      console.log('providerId set as search param for getServiceRequests');
     }
 
-    if (requesterId) {
-      params.set('requesterId', requesterId.toString());
+    if (requesterId != null) {
+      url += '?requesterId=' + requesterId;
+      console.log('requesterId set as search param for getServiceRequests');
     }
 
 
     const headers = this.createHeaders();
 
-    return this.http.get(url, {headers: headers, search: params})
+    return this.http.get(url, {headers: headers})
       .toPromise()
       .then(response => response.json() as ServiceRequest[])
       .catch(error => this.handleError(error));

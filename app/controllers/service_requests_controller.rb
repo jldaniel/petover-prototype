@@ -30,16 +30,16 @@ class ServiceRequestsController < ApplicationController
 
     if providerSearchFlag and requesterSearchFlag
       puts 'Searching for both provider ID and requestor ID'
-      @service_requests = ServiceRequest.find_by(requester_id: search_params[:requesterId], provider_id: search_params[:providerId])
+      @service_requests = ServiceRequest.where(requester_id: search_params[:requesterId], provider_id: search_params[:providerId])
 
     elsif providerSearchFlag
       puts 'Search for just provider ID'
-      @service_requests = ServiceRequest.find_by(provider_id: search_params[:providerId])
+      @service_requests = ServiceRequest.where(provider_id: search_params[:providerId])
 
     elsif requesterSearchFlag
       puts 'Search for just requester ID'
       #@service_requests = ServiceRequest.find_by_requester_id(search_params[requesterId])
-      @service_requests = ServiceRequest.find_by(requester_id: search_params[:requesterId])
+      @service_requests = ServiceRequest.where(requester_id: search_params[:requesterId])
     else
 
       # TODO: Extract the search params if they exist
@@ -102,7 +102,7 @@ class ServiceRequestsController < ApplicationController
     end
 
     def service_request_update_params
-      params.require(:request).permit(:request_state)
+      params.require(:service_request).permit(:request_state)
     end
 
 end

@@ -13,8 +13,27 @@
       <div class="row" style="margin: 1% 0% 0% 0%;padding: 3%;">
         <h4 class="text-left media-heading">Notifications </h4>
         <div class="media" style="margin: 3% 0% 0% 0%;border:1px solid;padding: 2% 2% 25%;">
-          <p>content</p>
+          <div *ngFor="let notification of providerNotifications">
+            <p><b>Service Requested By: {{notification.requester_id}}</b></p>
+            <p>Service: {{ notification.service_id }}</p>
+            <p>Drop Off: {{ notification.start_date }}</p>
+            <p>Pick Up: {{ notification.end_date }}</p>
+            <p>For: {{ notification.pet_id }}</p>
+            <button (click)="acceptRequest(notification.id)">Accept</button>
+            <button (click)="denyRequest(notification.id)">Deny</button>
+          </div>
+
+
+          <div *ngFor="let notification of requesterNotifications">
+            <p><b>Your Request for: {{ notification.service_id }}</b></p>
+            <p>Drop Off: {{notification.start_date }}</p>
+            <p>Pick Up: {{notification.end_date }}</p>
+            <p>For: {{ notification.pet_id }}</p>
+            <p>Status: {{ notification.request_state }}</p>
+          </div>
         </div>
+
+
       </div>
     </div>
   </div>
