@@ -11,6 +11,7 @@ import {Router} from '@angular/router';
 export class AddserviceComponent {
   public serviceName: string;
   public serviceAbout: string;
+  public serviceAddress: string;
   public serviceRate: number;
   public serviceRateType: string;
   public newServiceError = false;
@@ -24,7 +25,8 @@ export class AddserviceComponent {
     console.log('AddserviceComponent.addService called');
     this.resetState();
     this.api.newService(this.loginService.userId, this.serviceName,
-      this.serviceAbout, this.serviceRate, this.serviceRateType, this.base64Image)
+      this.serviceAbout, this.serviceAddress, this.serviceRate,
+      this.serviceRateType, this.base64Image)
       .then(response => {
         console.log('New service created');
         console.log(response);

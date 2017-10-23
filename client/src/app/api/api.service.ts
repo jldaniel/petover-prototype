@@ -237,7 +237,7 @@ export class ApiService {
    * @param {number} rate_type The rate type, either hourly, once, or daily
    * @returns {Promise<any | never | Service>}
    */
-  newService(userId: number, name: string, about: string, rate: number, rate_type: string, picture: string) {
+  newService(userId: number, name: string, about: string, address: string, rate: number, rate_type: string, picture: string) {
     console.log('ApiService.newService called');
     // TODO: Authentication handling
     const url = this.usersUrl + '/' + userId + '/services';
@@ -246,6 +246,7 @@ export class ApiService {
     const body = { 'service': {
       'name': name,
       'about': about,
+      'address': address,
       'rate': rate,
       'rate_type': rate_type,
       'picture': picture

@@ -1,6 +1,7 @@
 require "base64"
 
 class UsersController < ApplicationController
+  include Geokit::Geocoders
   before_action :set_user, only: [:show, :update, :destroy]
 
   # GET /login
@@ -184,11 +185,11 @@ class UsersController < ApplicationController
     end
 
     def service_params
-      params.require(:service).permit(:name, :about, :rate, :rate_type, :picture)
+      params.require(:service).permit(:name, :about, :address, :rate, :rate_type, :picture)
     end
 
     def service_update_params
-      params.require(:service).permit(:name, :about, :rate, :rate_type, :picture)
+      params.require(:service).permit(:name, :about, :address, :rate, :rate_type, :picture)
     end
 
     def get_user_pets(user)
