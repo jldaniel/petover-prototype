@@ -58,6 +58,10 @@ Rails.application.routes.draw do
       delete '/:id' => 'service_requests#destroy'
     end
 
+    scope '/stayovers' do
+      get '/' => 'stayover#index'
+    end
+
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

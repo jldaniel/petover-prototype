@@ -5,6 +5,7 @@ import {User} from './User';
 import {Pet} from './Pet';
 import {Service} from './Service';
 import { ServiceRequest } from './ServiceRequest';
+import {IStayover} from "./IStayover";
 
 
 @Injectable()
@@ -346,20 +347,52 @@ export class ApiService {
    * @param {number} userId - optional argument to specify a user ID to get all service requests related to that user
    * @returns {Promise<ServiceRequest[]>}
    */
-  getServiceRequests(userId?: number): Promise<ServiceRequest[]> {
+  getServiceRequests(providerId: number, requesterId: number): Promise<ServiceRequest[]> {
 
-    let url = this.serviceRequestUrl;
-
-    if (userId) {
-      url += '?userId=' + userId;
+    const url = this.serviceRequestUrl;
+    const params: URLSearchParams = new URLSearchParams();
+    if (providerId) {
+      params.set('providerId', providerId.toString());
     }
+
+    if (requesterId) {
+      params.set('requesterId', requesterId.toString());
+    }
+
 
     const headers = this.createHeaders();
 
-    return this.http.get(url, {headers: headers})
+    return this.http.get(url, {headers: headers, search: params})
       .toPromise()
       .then(response => response.json() as ServiceRequest[])
       .catch(error => this.handleError(error));
+
+  }
+
+  getStayovers(userId: number): Promise<IStayover[]> {
+    let stayovers: IStayover[] = [];
+
+    this.getServiceRequests(undefined, userId)
+      .then(serviceRequests => {
+        for (const serviceRequest of serviceRequests) {
+          const serviceId = serviceRequest.service_id;
+          const petId = serviceRequest.pet_id;
+          const providerId = serviceRequest.provider_id;
+
+          const pet: Pet = undefined;
+          this.getPet(userId, petId)
+            .then(pet => {
+              pet = pet;
+            });
+
+        }
+
+
+      }).catch(error => {
+        this.handleError(error);
+    });
+
+
 
   }
 
