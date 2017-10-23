@@ -2,13 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/controllers/stayover_controller.rb" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/models/stayover.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/api/api.service.ts" afterPath="$PROJECT_DIR$/client/src/app/api/api.service.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/stayovers/stayovers.component.html" afterPath="$PROJECT_DIR$/client/src/app/stayovers/stayovers.component.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/src/app/stayovers/stayovers.component.ts" afterPath="$PROJECT_DIR$/client/src/app/stayovers/stayovers.component.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/routes.rb" afterPath="$PROJECT_DIR$/config/routes.rb" />
     </list>
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
@@ -40,7 +36,7 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/stayover_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="200">
-                  <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+                  <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
                   <folding />
                 </state>
               </provider>
@@ -50,7 +46,7 @@
             <entry file="file://$PROJECT_DIR$/app/models/stayover.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="108">
-                  <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+                  <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
                   <folding />
                 </state>
               </provider>
@@ -124,7 +120,7 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/services_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="234">
-                  <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+                  <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
@@ -134,7 +130,7 @@
             <entry file="file://$PROJECT_DIR$/app/controllers/service_requests_controller.rb">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="-216">
-                  <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+                  <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
                   <folding />
                 </state>
               </provider>
@@ -436,7 +432,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="81492000" />
+    <option name="totallyTimeSpent" value="82088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="-4" width="1855" height="987" extended-state="6" />
@@ -751,7 +747,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/services_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
-          <caret line="13" column="9" lean-forward="true" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
+          <caret line="13" column="9" lean-forward="false" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
           <folding />
         </state>
       </provider>
@@ -775,7 +771,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/service_requests_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-216">
-          <caret line="12" column="38" lean-forward="true" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
+          <caret line="12" column="38" lean-forward="false" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
           <folding />
         </state>
       </provider>
@@ -791,7 +787,7 @@
     <entry file="file://$PROJECT_DIR$/app/models/stayover.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="108">
-          <caret line="6" column="24" lean-forward="true" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
+          <caret line="6" column="24" lean-forward="false" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -799,7 +795,7 @@
     <entry file="file://$PROJECT_DIR$/app/controllers/stayover_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
-          <caret line="20" column="27" lean-forward="true" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
+          <caret line="20" column="27" lean-forward="false" selection-start-line="20" selection-start-column="27" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
       </provider>

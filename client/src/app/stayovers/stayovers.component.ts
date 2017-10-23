@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
-import { ServiceRequest } from '../api/ServiceRequest';
 import { LoginService } from '../util/login.service';
+import { IStayover } from '../api/IStayover';
 
 @Component({
   templateUrl: './stayovers.component.html',
   styleUrls: ['./stayovers.component.css']
 })
 export class StayoversComponent implements OnInit {
-  public stayoverRequests: ServiceRequest[] = [];
+  public stayovers: IStayover[] = []
 
   constructor(private api: ApiService, private loginService: LoginService) {
 
@@ -18,12 +18,17 @@ export class StayoversComponent implements OnInit {
   // TODO Also retrieve the service provider and pet info for the service requests
   ngOnInit(): void {
     // Retrieve the users stay overs for display
-    this.api.getServiceRequests(undefined, this.loginService.userId)
-      .then(serviceRequests => {
-        console.log('Service Requests retrieved');
-        this.stayoverRequests = serviceRequests;
+    this.api.getStayovers(this.loginService.userId)
+      .then(stayovers => {
+        this.stayovers = stayovers;
+
+        console.log('Retrieved Stayovers');
+        console.log(stayovers[0].service_request);
+
+
       }).catch(error => {
-        console.error('Error retrieving service requests');
+        // TODO Handle error
+        console.error('There was an error retrieving the users stayovers');
         console.error(error);
     });
   }

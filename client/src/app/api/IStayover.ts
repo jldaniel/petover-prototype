@@ -4,8 +4,8 @@ import { Pet } from './Pet';
 import { Service } from './Service';
 
 export interface IStayover {
-  serviceRequest?: ServiceRequest;
-  serviceProvider?: User;
+  service_request?: ServiceRequest;
+  provider?: User;
   pet?: Pet;
   service?: Service;
 }

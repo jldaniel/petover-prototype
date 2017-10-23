@@ -1,7 +1,30 @@
 <div>
   <h3>Your Stayovers</h3>
 </div>
+<!-- TODO Format this view -->
 
-<div *ngFor="let stayover of stayoverRequests">
+<div *ngFor="let stayover of stayovers">
+  <div>
+    <b>{{ stayover.service.name }}</b>
+    <p>{{ stayover.service.about }}</p>
+    <!-- TODO Add in the location of the service for display -->
+    <p>${{ stayover.service.rate }}</p>
+    <p>{{ stayover.service.rating }}</p>
+  </div>
 
+  <div>
+    <b>{{ stayover.pet.name }}</b>
+    <img src="{{ stayover.pet.picture.url }}">
+  </div>
+
+  <div>
+    <b>{{ stayover.provider.first_name }} {{ stayover.provider.last_name }}</b>
+    <img src="{{ stayover.provider.picture.url }}">
+  </div>
+
+  <div>
+    <p>Drop Off: {{ stayover.service_request.start_date }}</p>
+    <p>Pick Up: {{ stayover.service_request.end_date }}</p>
+    <p>Status: {{ stayover.service_request.request_state }}</p>
+  </div>
 </div>

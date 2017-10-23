@@ -5,7 +5,7 @@ import {User} from './User';
 import {Pet} from './Pet';
 import {Service} from './Service';
 import { ServiceRequest } from './ServiceRequest';
-import {IStayover} from "./IStayover";
+import {IStayover} from './IStayover';
 
 
 @Injectable()
@@ -369,30 +369,22 @@ export class ApiService {
 
   }
 
+  /**
+   * Get the stayovers for the specified user
+   *
+   * @param {number} userId The ID of the user to get the stayovers for
+   * @returns {Promise<IStayover[]>}
+   */
   getStayovers(userId: number): Promise<IStayover[]> {
-    let stayovers: IStayover[] = [];
 
-    this.getServiceRequests(undefined, userId)
-      .then(serviceRequests => {
-        for (const serviceRequest of serviceRequests) {
-          const serviceId = serviceRequest.service_id;
-          const petId = serviceRequest.pet_id;
-          const providerId = serviceRequest.provider_id;
+    const url = this.baseUrl + '/stayovers?userId=' + userId;
 
-          const pet: Pet = undefined;
-          this.getPet(userId, petId)
-            .then(pet => {
-              pet = pet;
-            });
+    const headers = this.createHeaders();
 
-        }
-
-
-      }).catch(error => {
-        this.handleError(error);
-    });
-
-
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as IStayover[])
+      .catch(error => this.handleError(error));
 
   }
 
