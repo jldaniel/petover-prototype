@@ -1,7 +1,25 @@
 # README
 
+*Installation Instructions*
+
+*** Install node.js **
+https://nodejs.org/en/
+
+
+****Install Angular CLI tools****
+sudo npm install -g @angular/cli
+
+
 **Notes on PostgreSQL Database Configuration**
 Initial database setup for development
+
+Install postgres
+sudo apt-get install postgresql
+
+Install the postgreqs Ruby on Rails gem dependency
+sudo apt-get insall libpq-dev
+
+
 
 Install the database and dependencies
 ```bash
@@ -50,27 +68,14 @@ git push heroku master
 git run rake db:seed
 ```
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Running the server
+rails s
 
-Things you may want to cover:
+# Pulling from github and building the application
+git clone https://github.com/jldaniel/petover.git
+cd client
+ng build --prod
+cd ..
+rake db:drop db:create db:migrate db:seed
+rails s
 
-* Ruby version
-
-* Perhaps visitors - FYI C4TMSTR was here.
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
