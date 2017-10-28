@@ -1,22 +1,21 @@
-# README
+# PetOver
 
-*Installation Instructions*
+## Installation Instructions
 
 These instructions assume the OS is Ubuntu 16.04. If using another operating system we recommend configuring a Virtual Machine running Ubuntu 16.04 to deploy and develop the application. 
 
-If you do not have any virtualization software already installed, Virtual Box can be used and is freely available at 
+If you do not have any virtualization software already installed, Virtual Box can be used and is freely available at [Virtual Box](https://www.virtualbox.org/wiki/Downloads)
 
-[Virtual Box](https://www.virtualbox.org/wiki/Downloads)
+_Note that there have been issues when using the performance issues with standard installs of Ubuntu on Virtual Box when using Mac OS X so it is recommented that Ubuntu Server without a graphical interface be used instead._ 
 
-*Note that there have been issues when using the performance issues with standard installs of Ubuntu on Virtual Box when using Mac OS X so it is recommented that Ubuntu Server without a graphical interface be used instead. 
-
-#### Install git
+### Install git
 ```bash
 sudo apt-get update
 sudo apt-get install git
 ```
 
-__OPTIONAL__ configure git with an SSH key if you don't like typing in your github credentials when pushing or pulling from the repository.
+__OPTIONAL__ 
+configure git with an SSH key if you don't like typing in your github credentials when pushing or pulling from the repository.
 ```bash
 git config --global color.ui true
 git config --global user.name "YOUR NAME"
@@ -40,7 +39,7 @@ and you should get a message like
 Hi username You've successfully authenticated, but GitHub does not provide shell access.
 ```
 
-#### Clone the source code from git
+### Clone the source code from git
 ```bash
 cd ~/
 mkdir PetOver
@@ -50,7 +49,7 @@ git clone https://github.com/jldaniel/petover.git
 
 Note that if this fails, you may have not been added as a collaborated to the repository. Contact Jason Daniel if this appears to be the case.
 
-#### Install Ruby
+### Install Ruby
 
 ```bash
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
@@ -77,7 +76,7 @@ gem install bundler
 ```
 
 
-#### Install nodejs
+### Install nodejs
 
 Nodejs can be installed a couple different ways, from the command line we can do
 
@@ -88,7 +87,7 @@ sudo apt-get install -y nodejs
 
 If on Mac or Windows, nodejs can be obtained via a graphical installer avialable [here](https://nodejs.org/en/)
 
-#### Install Rails
+### Install Rails
 Note that we are currently using Rails v5.1.4 
 
 ```bash
@@ -98,11 +97,11 @@ rails -v
 
 The last command should display `Rails 5.1.4` is everything worked.
 
-#### Install Angular CLI tools
+### Install Angular CLI tools
 sudo npm install -g @angular/cli
 
 
-#### Install and configure the PostgreSQL database
+### Install and configure the PostgreSQL database
 
 ```bash
 $ sudo apt-get update
@@ -148,7 +147,7 @@ to
 local    all             all                        md5
 ```
 
-#### Build the app
+### Build the app
 
 Install the server side dependencies
 
@@ -184,7 +183,7 @@ rails s
 to start the server, then on a browser navigate to `localhost:3000` to use the app
 
 
-#### Pushing App to Heroku
+### Pushing App to Heroku
 Heroku has served as our live test environment [Heroku](https://www.heroku.com/about). If you have not already done so, go the the Heroku site and create an account.
 
 Install the heroku command line tools
