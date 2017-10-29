@@ -28,7 +28,7 @@ Geokit::Geocoders::request_timeout = 3
 
 # You can also use the free API key instead of signed requests
 # See https://developers.google.com/maps/documentation/geocoding/#api_key
-Geokit::Geocoders::GoogleGeocoder.api_key = 'AIzaSyAwzg1p07cXrdQRzYNnKW1WvBZjmP-VGY8'
+Geokit::Geocoders::GoogleGeocoder.api_key = 'AIzaSyBHIKH--NrlTAsQpjMeRmW4UPOYuHRZYic'
 
 # You can also set multiple API KEYS for different domains that may be directed
 # to this same application.
