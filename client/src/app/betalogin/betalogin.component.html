@@ -2,7 +2,7 @@
   <form name="splash-login-form" class="form-signin" (ngSubmit)="f.form.valid && login()" #f="ngForm" novalidate>
     <h2 class="form-signin-heading">PetOver</h2>
     <img class="form-logo" src="../assets/paw-print.gif" alt="logo placeholder">
-    <input type="password" class="input-block-level" placeholder="catdog" name="password" [(ngModel)]="password">
+    <input type="password" class="input-block-level" placeholder="PASSWORD" name="password" [(ngModel)]="password">
     <div *ngIf="loginError" class="alert alert-danger">Invalid Password</div>
     <button class="btn btn-large btn-primary pull-right" type="submit">Sign in</button>
   </form>
