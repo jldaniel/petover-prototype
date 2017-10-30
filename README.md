@@ -50,7 +50,18 @@ git clone https://github.com/jldaniel/petover.git
 Note that if this fails, you may have not been added as a collaborated to the repository. Contact Jason Daniel if this appears to be the case.
 
 ### Install Ruby
+#### Windows
+Follow these [instructions](https://msdn.microsoft.com/en-us/commandline/wsl/install-win10) to install the Windows Linux Subsystem.
+```bash
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+curl -sSL https://get.rvm.io | bash -s stable --ruby
+source ~/.rvm/scripts/rvm
+rvm install 2.4.2
+rvm use 2.4.2 --default
+ruby -v
+```
 
+#### Linux
 ```bash
 sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev python-software-properties libffi-dev nodejs
 
@@ -78,14 +89,13 @@ gem install bundler
 
 ### Install nodejs
 
-Nodejs can be installed a couple different ways, from the command line we can do
-
+#### Linux/Windows
 ```bash
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get install -y nodejs
 ```
-
-If on Mac or Windows, nodejs can be obtained via a graphical installer avialable [here](https://nodejs.org/en/)
+#### MacOS/Windows
+Nodejs can also be obtained via a graphical installer avialable [here](https://nodejs.org/en/)
 
 ### Install Rails
 Note that we are currently using Rails v5.1.4 
@@ -98,8 +108,21 @@ rails -v
 The last command should display `Rails 5.1.4` is everything worked.
 
 ### Install Angular CLI tools
+```bash
 sudo npm install -g @angular/cli
-
+```
+note that you should `ctrl+c` and run the command above again if you get the following (or similar) error message:
+```bash
+gyp verb tmpdir == cwd automatically will remove dev files after to save disk space
+gyp verb command install [ '8.8.1' ]
+gyp verb install input version string "8.8.1"
+gyp verb install installing version: 8.8.1
+gyp verb install --ensure was passed, so won't reinstall if already installed
+gyp verb install version not already installed, continuing with install 8.8.1
+gyp verb ensuring nodedir is created /usr/lib/node_modules/@angular/cli/node_modules/node-sass/.node-gyp/8.8.1
+gyp WARN EACCES user "root" does not have permission to access the dev dir "/usr/lib/node_modules/@angular/cli/node_modules/node-sass/.node-gyp/8.8.1"
+gyp WARN EACCES attempting to reinstall using temporary dev dir "/usr/lib/node_modules/@angular/cli/node_modules/node-sass/.node-gyp"
+```
 
 ### Install and configure the PostgreSQL database
 
