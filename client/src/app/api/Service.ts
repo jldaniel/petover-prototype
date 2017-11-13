@@ -17,3 +17,4 @@ export class Service {
 
   profile_image_url: string;
 }
+

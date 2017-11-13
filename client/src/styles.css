@@ -1,1 +1,78 @@
 /* You can add global styles to this file, and also import other style files */
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
+body {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #ffffff;
+}
+
+h1 {
+  color: #56a21f;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  color: #00a2a0;
+  font-family: "Roboto", sans-serif;
+}
+
+h3 {
+  color: #00a2a0;
+  font-family: "Roboto", sans-serif;
+}
+
+h4 {
+  color: #00a2a0;
+  font-family: "Roboto", sans-serif;
+}
+
+h5 {
+  color: #00a2a0;
+  font-family: "Roboto", sans-serif;
+}
+
+footer {
+  margin-bottom:0 !important;
+  position:absolute;
+  bottom:0;
+}
+
+a {
+  font-family: 'Open Sans', sans-serif;
+}
+
+p {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
+}
+
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}

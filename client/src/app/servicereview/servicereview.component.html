@@ -1,0 +1,26 @@
+<div>
+  <h2>Request for Service</h2>
+
+  <div>
+    <p>Service: {{ service.name }}</p>
+    <p>Drop Off: {{ serviceRequest.start_date }}</p>
+    <p>Pick Up: {{ serviceRequest.end_date }}</p>
+    <p>{{ serviceRequest.message }}</p>
+  </div>
+
+  <div>
+  <h3>From</h3>
+  <p>{{ user.first_name }} {{ user.last_name }}</p>
+  <img src="{{ user.img_url }}" />
+  </div>
+
+  <div>
+  <h3>For</h3>
+  <p>{{ pet.name }}</p>
+  <p>{{ pet.img_url }}</p>
+  </div>
+
+  <button (click)="acceptRequest()">Accept</button>
+  <button (click)="denyRequest()">Deny</button>
+
+</div>

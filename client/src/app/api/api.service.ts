@@ -35,6 +35,12 @@ export class ApiService {
   private serviceUrl = this.baseUrl + '/services';
 
   /**
+   * The URL for the pets API
+   * @type {string}
+   */
+  private petsUrl = this.baseUrl + '/pets';
+
+  /**
    * Base URL for the service requests API
    * @type {string}
    */
@@ -193,8 +199,22 @@ export class ApiService {
       .toPromise()
       .then(response => response.json() as Pet)
       .catch(error => this.handleError(error));
+  }
 
+  /**
+   * Retrieve the public view for a pet
+   * @param {number} petId The ID of the pet to retrieve
+   * @returns {Promise<any | never | Pet>}
+   */
+  showPet(petId: number) {
+    console.log('ApiService.showPet called');
+    const url = this.petsUrl + '/' + petId;
+    const headers = this.createHeaders();
 
+    return this.http.get(url, {headers: headers})
+      .toPromise()
+      .then(response => response.json() as Pet)
+      .catch(error => this.handleError(error));
   }
 
   /**

@@ -13,7 +13,7 @@
       <div class="row" style="margin: 1% 0% 0% 0%;padding: 3%;">
         <h4 class="text-left media-heading">Notifications </h4>
         <div class="media" style="margin: 3% 0% 0% 0%;border:1px solid;padding: 2% 2% 25%;">
-          <div *ngFor="let notification of providerNotifications">
+          <div *ngFor="let notification of providerNotifications" [routerLink]="['/servicereview', notification.id]">
             <p><b>Service Requested By: {{notification.requester_id}}</b></p>
             <p>Service: {{ notification.service_id }}</p>
             <p>Drop Off: {{ notification.start_date }}</p>

@@ -34,6 +34,7 @@ import {EditpetComponent} from './editpet/editpet.component';
 import {EditserviceComponent} from './editservice/editservice.component';
 import {SearchComponent} from './search/search.component';
 import { ServicerequestComponent } from './servicerequest/servicerequest.component';
+import {ServicereviewComponent} from './servicereview/servicereview.component';
 
 
 @NgModule({
@@ -58,7 +59,8 @@ import { ServicerequestComponent } from './servicerequest/servicerequest.compone
     EditpetComponent,
     EditserviceComponent,
     SearchComponent,
-    ServicerequestComponent
+    ServicerequestComponent,
+    ServicereviewComponent
   ],
   imports: [
     BrowserModule,

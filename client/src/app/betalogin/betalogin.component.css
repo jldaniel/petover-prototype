@@ -1,3 +1,5 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:700);
+
 .form-container {
   padding-top: 120px;
 }
@@ -6,8 +8,7 @@
   max-width: 300px;
   padding: 20px 40px 60px;
   margin: 0 auto 20px;
-  background-color: #fff;
-  border: 1px solid #e5e5e5;
+  background-color: #ffffff;
 }
 .form-signin-heading {
   text-align: center;
@@ -25,4 +26,22 @@
 .form-logo {
   width: 200px;
   height: 200px;
+}
+
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background: #4CAF50;
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background: #43A047;
 }

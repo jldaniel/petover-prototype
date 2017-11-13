@@ -30,8 +30,7 @@ class ServicesController < ApplicationController
   # GET /services/:id
   def show
     puts('GET /services/:id')
-    @service = Service.find(params[:id])
-
+    @service = set_service
     render json: @service
   end
 
@@ -51,7 +50,9 @@ class ServicesController < ApplicationController
   end
 
 private
-
+  def set_service
+    @service = Service.find(params[:id])
+  end
 
 
 end

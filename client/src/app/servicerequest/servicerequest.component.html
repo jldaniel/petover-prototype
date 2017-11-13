@@ -65,7 +65,7 @@
 
   <select class="selectpicker form-control" name="selectedPet" title="Choose a pet" [(ngModel)]="petId">
     <!-- TODO populate with user's pets -->
-    <option *ngFor="let pet of requestingUser.pets" [ngValue]="pet.id">{{ pet.name}}</option>
+    <option *ngFor="let pet of pets" [ngValue]="pet.id">{{ pet.name}}</option>
   </select>
 
   <textarea name="message" placeholder="Additional information for the service provider" cols="40" rows="5" [(ngModel)]="message"></textarea>

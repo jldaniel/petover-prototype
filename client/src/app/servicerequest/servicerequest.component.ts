@@ -4,6 +4,7 @@ import { LoginService } from '../util/login.service';
 import { ApiService } from '../api/api.service';
 import { User } from '../api/User';
 import { Service } from '../api/Service';
+import {Pet} from "../api/Pet";
 
 
 @Component({
@@ -12,14 +13,15 @@ import { Service } from '../api/Service';
   styleUrls: ['./servicerequest.component.css']
 })
 export class ServicerequestComponent implements OnInit {
-  public requestingUser: User = null;
-  public providingUser: User = null;
-  public service: Service = null;
+  public requestingUser: User;
+  public providingUser: User;
+  public service: Service;
 
   // Form data
   public startDate: Date = null;
   public endDate: Date = null;
   public message: string = null;
+  public pets: Pet[] = [];
   public petId: number = null;
 
   /**
@@ -46,7 +48,6 @@ export class ServicerequestComponent implements OnInit {
         console.log('ServicerequestComponent service request successfully created');
         console.log(serviceRequest);
         this.router.navigate(['/stayovers']);
-        // TODO Handle redirection to users dashboard
       })
       .catch(error => {
         // TODO Handle error
@@ -57,7 +58,9 @@ export class ServicerequestComponent implements OnInit {
 
   ngOnInit(): void {
     // Get the service id from the url parameter and retrieve the service and service provider
+    console.log('ServicerequestComponent ngOnInit called');
     this.route.params.subscribe(params => {
+      console.log('servicerequestComponent in route.params.subscribe');
       console.log(params);
       console.log(params['id']);
 
@@ -65,10 +68,12 @@ export class ServicerequestComponent implements OnInit {
 
       this.api.getService(serviceId)
         .then(service => {
+          console.log('ServicerequestComponent getService.then called');
           this.service = service;
 
           this.api.getUser(service.user_id)
             .then(user => {
+              console.log('ServicerequestComponent getUser providing user then called');
               this.providingUser = user;
             })
             .catch(error => {
@@ -82,17 +87,22 @@ export class ServicerequestComponent implements OnInit {
           console.error('Unable to retrieve the requested service');
           console.error(error);
         });
-    });
 
       // Get the current user data
       this.api.getUser(this.loginService.userId)
-        .then(user => this.requestingUser = user)
+        .then(user => {
+          console.log('ServicerequestComponent getUser requestingUser then called');
+          this.requestingUser = user;
+          this.pets = this.requestingUser.pets;
+        })
         .catch(error => {
           // TODO Handle error
+          console.log('ServicerequestComponent getUser requestingUser catch called');
+          console.error('Unable to get the requesting user');
           console.error(error);
         });
+    });
 
-      // Get the Service data
   }
 
 

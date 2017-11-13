@@ -11,3 +11,10 @@ export class ServiceRequest {
   pet_id: number;
 
 }
+
+
+export const RequestState = {
+  ACCEPTED: 'ACCEPTED',
+  DENIED: 'DENIED',
+  PENDING: 'PENDING'
+};
