@@ -14,7 +14,7 @@ import {IStayover} from '../api/IStayover';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
-  public user: User;
+  public user: User = new User();
   public providerNotifications: ServiceRequest[] = [];
   public requesterNotifications: ServiceRequest[] = [];
 

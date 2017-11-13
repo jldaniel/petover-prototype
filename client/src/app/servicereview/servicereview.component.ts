@@ -13,10 +13,10 @@ import { Pet } from '../api/Pet';
   styleUrls: ['servicereview.component.css']
 })
 export class ServicereviewComponent implements OnInit {
-  public serviceRequest: ServiceRequest;
-  public user: User;
-  public pet: Pet;
-  public service: Service;
+  public serviceRequest: ServiceRequest = new ServiceRequest();
+  public user: User = new User();
+  public pet: Pet = new Pet();
+  public service: Service = new Service();
 
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) {
 
@@ -61,6 +61,7 @@ export class ServicereviewComponent implements OnInit {
 
       this.api.getServiceRequest(serviceRequestId)
         .then(serviceRequest => {
+          this.serviceRequest = serviceRequest;
 
           // get the requesting user
           const userId = serviceRequest.requester_id;
