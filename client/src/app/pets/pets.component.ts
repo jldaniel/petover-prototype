@@ -3,6 +3,7 @@ import { ApiService } from '../api/api.service';
 import { LoginService } from '../util/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../api/User';
+import {DefaultImage} from '../util/DefaultImage';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,7 @@ import { User } from '../api/User';
 })
 export class PetsComponent implements OnInit {
   public user: User;
+  defaultImage = new DefaultImage();
 
   constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
 

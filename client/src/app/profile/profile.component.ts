@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { ActivatedRoute } from '@angular/router';
 import { User } from '../api/User';
+import {DefaultImage} from '../util/DefaultImage';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ import { User } from '../api/User';
 })
 export class ProfileComponent implements OnInit {
   public user: User;
+  defaultImage = new DefaultImage();
 
   constructor(private api: ApiService, private route: ActivatedRoute) {
 

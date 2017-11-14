@@ -1,12 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { LoginService } from '../util/login.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../api/User';
-import { ServiceRequest } from '../api/ServiceRequest';
-import {IStayover} from '../api/IStayover';
-
-
+import { RequestState, ServiceRequest } from '../api/ServiceRequest';
+import { DefaultImage } from '../util/DefaultImage';
 
 @Component({
   selector: 'app-root',
@@ -17,8 +14,9 @@ export class DashboardComponent implements OnInit {
   public user: User = new User();
   public providerNotifications: ServiceRequest[] = [];
   public requesterNotifications: ServiceRequest[] = [];
+  public defaultImage = new DefaultImage();
 
-  constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
+  constructor(public loginService: LoginService, private api: ApiService) {
 
   }
 
@@ -34,8 +32,15 @@ export class DashboardComponent implements OnInit {
     // Get the service requests where this user is the provider
     this.api.getServiceRequests(this.loginService.userId, null)
       .then(serviceRequests => {
-        this.providerNotifications = serviceRequests;
-        console.log('providerNotifications set');
+
+        // Populate the notifications tab only if the request is pending
+        for (const serviceRequest of serviceRequests) {
+          if (serviceRequest.request_state === RequestState.PENDING) {
+            this.providerNotifications.push(serviceRequest);
+          }
+        }
+
+        console.log('pending provider notifications');
         console.log(this.providerNotifications);
       })
       .catch(error => {
@@ -54,29 +59,4 @@ export class DashboardComponent implements OnInit {
         console.log(error);
     });
   }
-
-  public acceptRequest(requestId: number): void {
-    console.log('Request: ' + requestId + ' has been accepted');
-    this.api.updateServiceRequest(requestId, 'ACCEPTED')
-      .then(serviceRequest => {
-        console.log('ServiceRequest successufully accepted');
-      }).catch(error => {
-        console.error('Error accepting request');
-        console.error(error);
-    });
-
-  }
-
-  public denyRequest(requestId: number): void {
-    console.log('Request: ' + requestId + ' has been denied');
-    this.api.updateServiceRequest(requestId, 'DENIED')
-      .then(serviceRequest => {
-        console.log('ServiceRequest successufully accepted');
-      }).catch(error => {
-      console.error('Error denying request');
-      console.error(error);
-    });
-  }
-
-
 }

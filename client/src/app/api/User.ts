@@ -14,9 +14,4 @@ export class User {
   pets: Pet[] = null;
   services: Service[] = null;
   picture: Picture = null;
-
-  getProfileImageUrl(): string {
-    return '/assets' + this.img_url;
-  }
-
 }

@@ -4,7 +4,7 @@
     <div class="span9">
       <h3 class="text-center">{{user.first_name}} {{user.last_name}}</h3>
       <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-        <img src={{user.picture.url}} style="width:100%" class="center-block">
+        <img src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" style="width:100%" class="center-block">
       </div>
       <p class="text-center">&#9733;&#9733;&#9733;</p>
     </div>
@@ -18,7 +18,7 @@
       <div *ngFor="let service of user.services" class="row">
         <div class="col-md-4 col-md-offset-2">{{service.name}}</div>
         <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-          <img src={{service.picture.url}} style="width:100%" class="center-block">
+          <img src={{service.picture.url}} src-fallback="{{ defaultImage.serviceImage }}" style="width:100%" class="center-block">
         </div>
         <div class="col-md-4">{{service.rate}}  {{service.rate_type}}</div>
         <a [routerLink]="['/servicerequest', service.id]">Request Service</a>
@@ -28,7 +28,7 @@
     <div class="span9">
       <div *ngFor="let pet of user.pets" class="row">
         <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-          <img src={{pet.picture.url}} style="width:100%" class="center-block">
+          <img src={{pet.picture.url}} src-fallback="{{ defaultImage.petImage }}" style="width:100%" class="center-block">
         </div>
         <div class="col-md-4 col-md-offset-2">{{pet.name}}</div>
         <div class="col-md-4">{{pet.about_me}}</div>

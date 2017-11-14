@@ -3,6 +3,7 @@ import { ApiService } from '../api/api.service';
 import { LoginService } from '../util/login.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { User } from '../api/User';
+import { DefaultImage } from '../util/DefaultImage';
 
 
 
@@ -13,6 +14,7 @@ import { User } from '../api/User';
 })
 export class ServicesComponent implements OnInit {
   public user: User;
+  public defaultImage = new DefaultImage();
 
   constructor(public loginService: LoginService, private api: ApiService, private route: ActivatedRoute) {
 

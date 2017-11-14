@@ -5,6 +5,7 @@ import { User } from '../api/User';
 import { ServiceRequest, RequestState } from '../api/ServiceRequest';
 import { Service } from '../api/Service';
 import { Pet } from '../api/Pet';
+import {DefaultImage} from '../util/DefaultImage';
 
 
 @Component({
@@ -17,6 +18,7 @@ export class ServicereviewComponent implements OnInit {
   public user: User = new User();
   public pet: Pet = new Pet();
   public service: Service = new Service();
+  public defaultImage = new DefaultImage();
 
   constructor(private api: ApiService, private route: ActivatedRoute, private router: Router) {
 

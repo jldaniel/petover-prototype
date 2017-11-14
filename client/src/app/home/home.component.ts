@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { User } from '../api/User';
 import { LoginService } from '../util/login.service';
+import {DefaultImage} from '../util/DefaultImage';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,7 @@ import { LoginService } from '../util/login.service';
 })
 export class HomeComponent implements OnInit {
   users: User[];
-
+  defaultImage = new DefaultImage();
 
   constructor(private api: ApiService, public loginService: LoginService) {
     console.log('HomeComponent.constructor called');

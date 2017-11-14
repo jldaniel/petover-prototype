@@ -6,6 +6,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
+import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
 
 // Service and component for beta login
 import { BetaloginComponent } from './betalogin/betalogin.component';
@@ -28,13 +29,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { MessagesComponent } from './messages/messages.component';
 import { StayoversComponent } from './stayovers/stayovers.component';
 import { CaretakerinfoComponent } from './caretakerinfo/caretakerinfo.component';
-import {AddpetComponent} from './addpet/addpet.component';
-import {AddserviceComponent} from './addservice/addservice.component';
-import {EditpetComponent} from './editpet/editpet.component';
-import {EditserviceComponent} from './editservice/editservice.component';
-import {SearchComponent} from './search/search.component';
+import { AddpetComponent } from './addpet/addpet.component';
+import { AddserviceComponent } from './addservice/addservice.component';
+import { EditpetComponent } from './editpet/editpet.component';
+import { EditserviceComponent } from './editservice/editservice.component';
+import { SearchComponent } from './search/search.component';
 import { ServicerequestComponent } from './servicerequest/servicerequest.component';
-import {ServicereviewComponent} from './servicereview/servicereview.component';
+import { ServicereviewComponent } from './servicereview/servicereview.component';
 
 
 @NgModule({
@@ -67,7 +68,8 @@ import {ServicereviewComponent} from './servicereview/servicereview.component';
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    Ng2ImgFallbackModule
   ],
   providers: [
     BetaloginService,

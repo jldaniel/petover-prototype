@@ -2,13 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { ApiService } from '../api/api.service';
 import { LoginService } from '../util/login.service';
 import { IStayover } from '../api/IStayover';
+import {DefaultImage} from '../util/DefaultImage';
 
 @Component({
   templateUrl: './stayovers.component.html',
   styleUrls: ['./stayovers.component.css']
 })
 export class StayoversComponent implements OnInit {
-  public stayovers: IStayover[] = []
+  public stayovers: IStayover[] = [];
+  public defaultImage = new DefaultImage();
 
   constructor(private api: ApiService, private loginService: LoginService) {
 

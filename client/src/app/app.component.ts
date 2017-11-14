@@ -30,6 +30,8 @@ export class AppComponent implements OnInit {
 
   searchForm: FormGroup;
 
+  public defaultUserImage = './assets/default_images/default_user.png';
+
   constructor(private router: Router, betaloginService: BetaloginService,
               public loginService: LoginService,
               private zone: NgZone,

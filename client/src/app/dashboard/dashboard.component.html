@@ -4,7 +4,7 @@
     <div class="col-md-4" style="margin: 2% 2% 0 2%;">
       <h4 class="text-center">{{user.first_name}} {{user.last_name}}</h4>
       <div class="row" style="margin: 2px 0 5% 0; padding:0 5% 12% 5%;">
-        <img src={{user.picture.url}} style="width:50%" class="center-block">
+        <img src="{{user.picture.url}}" src-fallback="{{ defaultImage.userImage }}" style="width:50%" class="center-block" />
       </div>
     </div>
 
@@ -13,33 +13,22 @@
       <div class="row" style="margin: 1% 0% 0% 0%;padding: 3%;">
         <h4 class="text-left media-heading">Notifications </h4>
         <div class="media" style="margin: 3% 0% 0% 0%;border:1px solid;padding: 2% 2% 25%;">
-          <div *ngFor="let notification of providerNotifications" [routerLink]="['/servicereview', notification.id]">
-            <p><b>Service Requested By: {{notification.requester_id}}</b></p>
-            <p>Service: {{ notification.service_id }}</p>
-            <p>Drop Off: {{ notification.start_date }}</p>
-            <p>Pick Up: {{ notification.end_date }}</p>
-            <p>For: {{ notification.pet_id }}</p>
-            <button (click)="acceptRequest(notification.id)">Accept</button>
-            <button (click)="denyRequest(notification.id)">Deny</button>
+          <div class="notification-item" *ngFor="let notification of providerNotifications" [routerLink]="['/servicereview', notification.id]">
+            <p>New Service Request</p>
+            <a [routerLink]="['/servicereview', notification.id]">View</a>
           </div>
 
-
-          <div *ngFor="let notification of requesterNotifications">
-            <p><b>Your Request for: {{ notification.service_id }}</b></p>
-            <p>Drop Off: {{notification.start_date }}</p>
-            <p>Pick Up: {{notification.end_date }}</p>
-            <p>For: {{ notification.pet_id }}</p>
-            <p>Status: {{ notification.request_state }}</p>
+          <div class="notification-item" *ngFor="let notification of requesterNotifications">
+            <p><b>Your Request has been {{ notification.request_state }}</b></p>
+            <a [routerLink="['/stayovers']">View</a>
           </div>
         </div>
-
-
       </div>
     </div>
   </div>
 </div>
 
-
+<!-- Removing these for now since they don't do anything and relate to features not yet implemented
 <div class="container" style="margin: 4% 7% 0 7%;">
   <div class="row">
     <div class="col-md-4" style="margin: 2% 2% 0 2%;">
@@ -66,7 +55,6 @@
       </div>
     </div>
 
-    <!-- Right - Message Box -->
     <div class="col-md-6">
       <div class="row" style="margin: 1% 0% 0% 0%;padding: 3%;">
         <h4 class="text-left media-heading">Messages </h4>
@@ -77,6 +65,8 @@
     </div>
   </div>
 </div>
+-->
+
 
 
 

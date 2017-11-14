@@ -14,12 +14,12 @@
 
   <div>
     <b>{{ stayover.pet.name }}</b>
-    <img src="{{ stayover.pet.picture.url }}">
+    <img src="{{ stayover.pet.picture.url }}" src-fallback="{{ defaultImage.petImage }}">
   </div>
 
   <div>
     <b>{{ stayover.provider.first_name }} {{ stayover.provider.last_name }}</b>
-    <img src="{{ stayover.provider.picture.url }}">
+    <img src="{{ stayover.provider.picture.url }}" src-fallback="{{ defaultImage.userImage }}">
   </div>
 
   <div>
