@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute, Router} from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginService } from '../util/login.service';
 import { ApiService } from '../api/api.service';
 import { User } from '../api/User';
 import { Service } from '../api/Service';
-import {Pet} from "../api/Pet";
+import {Pet} from '../api/Pet';
+import {ServicePrice} from '../util/ServicePrice';
 
 
 @Component({
@@ -23,6 +24,10 @@ export class ServicerequestComponent implements OnInit {
   public message: string = null;
   public pets: Pet[] = [];
   public petId: number = null;
+
+  // Price data
+  public serviceCostString = ' ';
+
 
   /**
    * Constructor
@@ -54,6 +59,13 @@ export class ServicerequestComponent implements OnInit {
         console.error('ServicerequestComponent error creating service request');
         console.error(error);
       });
+  }
+
+  /**
+   * Update the estimated price for the service when the button is clicked
+   */
+  public updateServicePrice(): void {
+    this.serviceCostString = ServicePrice.servicePriceString(this.service.rate, this.service.rate_type, this.startDate, this.endDate);
   }
 
   ngOnInit(): void {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="petover_test@localhost" uuid="fff16dbe-7a28-4ad1-98bb-a7c49f233ea4">
+      <database-info product="PostgreSQL" version="9.5.8" jdbc-version="4.2" driver-name="PostgreSQL JDBC Driver" driver-version="42.1.1">
+        <identifier-quote-string>&quot;</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="lower" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>petover</user-name>
+      <introspection-schemas>petover_development:*|petover_test:*|postgres:*</introspection-schemas>
+    </data-source>
+  </component>
+</project>

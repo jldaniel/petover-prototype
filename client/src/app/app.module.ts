@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 
 import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
+import { DateTimePickerModule } from 'ng-pick-datetime';
 
 // Service and component for beta login
 import { BetaloginComponent } from './betalogin/betalogin.component';
@@ -65,11 +67,13 @@ import { ServicereviewComponent } from './servicereview/servicereview.component'
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     HttpModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    Ng2ImgFallbackModule
+    Ng2ImgFallbackModule,
+    DateTimePickerModule
   ],
   providers: [
     BetaloginService,
