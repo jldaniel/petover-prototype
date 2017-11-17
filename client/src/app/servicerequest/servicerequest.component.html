@@ -1,28 +1,38 @@
 <!-- TODO Show the service and user for reference -->
 
 <form (ngSubmit)="f.form.valid && requestService()" #f="ngForm" novalidate>
-  <div class="row">
-    <div class="input-control">
-      <owl-date-time [(ngModel)]="startDate" name="startDateId"></owl-date-time>
+  <div class="row" style="padding-top: 100px;">
+    <div class="col-md-4">
+      <label for="startDateId">Drop Off Date/Time</label>
+      <owl-date-time class="owl-dateTime-inline" [(ngModel)]="startDate" name="startDateId" id="startDateId"></owl-date-time>
     </div>
-    <div class="input-control">
-      <owl-date-time [(ngModel)]="endDate" name="endDateId"></owl-date-time>
+    <div class="col-md-4">
+      <label for="endDateId">Pick Up Date/Time</label>
+      <owl-date-time class="owl-dateTime-inline" [(ngModel)]="endDate" name="endDateId" id="endDateId"></owl-date-time>
     </div>
   </div>
 
   <div class="row">
-    <select class="selectpicker form-control" name="selectedPet" title="Choose a pet" [(ngModel)]="petId">
-      <!-- TODO populate with user's pets -->
-      <option *ngFor="let pet of pets" [ngValue]="pet.id">{{ pet.name}}</option>
-    </select>
+    <div class="col-md-4">
+      <label for="selectedPet">Which Pet is this for?</label>
+      <select class="selectpicker" name="selectedPet" title="Choose a pet" [(ngModel)]="petId" id="selectedPet">
+        <!-- TODO populate with user's pets -->
+        <option *ngFor="let pet of pets" [ngValue]="pet.id">{{ pet.name}}</option>
+      </select>
+    </div>
   </div>
 
   <div class="row">
-  <textarea name="message" placeholder="Additional information for the service provider" cols="40" rows="5" [(ngModel)]="message"></textarea>
+    <div class="col-md-4">
+      <label for="message">Send a message with your request</label>
+      <textarea name="message" placeholder="Enter message here" cols="40" rows="5" [(ngModel)]="message" id="message"></textarea>
+    </div>
   </div>
 
   <div class="row">
-  <button class="btn" type="submit">Send Request</button>
+    <div class="col-md-4">
+      <button class="btn" type="submit">Send Request</button>
+    </div>
   </div>
 </form>
 
