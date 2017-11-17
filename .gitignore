@@ -6,7 +6,7 @@
 
 # Jetbrains Local Files
 .idea/workspace.xml
-
+.idea/dataSources/*
 # Ignore bundler config.
 /.bundle
 
