@@ -6,7 +6,9 @@ import { User } from '../api/User';
 import { Service } from '../api/Service';
 import {Pet} from '../api/Pet';
 import {ServicePrice} from '../util/ServicePrice';
+import {NgbDateStruct, NgbTimeStruct} from '@ng-bootstrap/ng-bootstrap';
 
+const now = new Date();
 
 @Component({
   selector: 'app-root',
@@ -19,8 +21,10 @@ export class ServicerequestComponent implements OnInit {
   public service: Service;
 
   // Form data
-  public startDate: Date = null;
-  public endDate: Date = null;
+  public startDate: NgbDateStruct = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate()};
+  public startTime: NgbTimeStruct = {hour: 12, minute: 0, second: 0};
+  public endDate: NgbDateStruct = {year: now.getFullYear(), month: now.getMonth() + 1, day: now.getDate() + 1};
+  public endTime: NgbTimeStruct = {hour: 13, minute: 0, second: 0};
   public message: string = null;
   public pets: Pet[] = [];
   public petId: number = null;
@@ -47,8 +51,28 @@ export class ServicerequestComponent implements OnInit {
     const providerId = this.providingUser.id;
     const serviceId = this.service.id;
 
+    const startDateTime = new Date
+    (
+      this.startDate.year,
+      this.startDate.month,
+      this.startDate.day,
+      this.startTime.hour,
+      this.startTime.minute,
+      0
+    );
 
-    this.api.createServiceRequest(requesterId, providerId, serviceId, this.startDate, this.endDate, this.message, this.petId)
+    const endDateTime = new Date
+    (
+      this.endDate.year,
+      this.endDate.month,
+      this.endDate.day,
+      this.endTime.hour,
+      this.endTime.minute,
+      this.endTime.second,
+      0
+    );
+
+    this.api.createServiceRequest(requesterId, providerId, serviceId, startDateTime, endDateTime, this.message, this.petId)
       .then(serviceRequest => {
         console.log('ServicerequestComponent service request successfully created');
         console.log(serviceRequest);
@@ -65,7 +89,29 @@ export class ServicerequestComponent implements OnInit {
    * Update the estimated price for the service when the button is clicked
    */
   public updateServicePrice(): void {
-    this.serviceCostString = ServicePrice.servicePriceString(this.service.rate, this.service.rate_type, this.startDate, this.endDate);
+
+    const startDateTime = new Date
+    (
+      this.startDate.year,
+      this.startDate.month,
+      this.startDate.day,
+      this.startTime.hour,
+      this.startTime.minute,
+      0
+    );
+
+    const endDateTime = new Date
+    (
+      this.endDate.year,
+      this.endDate.month,
+      this.endDate.day,
+      this.endTime.hour,
+      this.endTime.minute,
+      this.endTime.second,
+      0
+    );
+
+    this.serviceCostString = ServicePrice.servicePriceString(this.service.rate, this.service.rate_type, startDateTime, endDateTime);
   }
 
   ngOnInit(): void {

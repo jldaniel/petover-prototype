@@ -1,7 +1,7 @@
 <!-- TODO Show the service and user for reference -->
 
 <form (ngSubmit)="f.form.valid && requestService()" #f="ngForm" novalidate>
-  <div class="row" style="padding-top: 100px;">
+  <!--div class="row" style="padding-top: 100px;">
     <div class="col-md-4">
       <label for="startDateId">Drop Off Date/Time</label>
       <owl-date-time class="owl-dateTime-inline" [(ngModel)]="startDate" name="startDateId" id="startDateId"></owl-date-time>
@@ -9,6 +9,17 @@
     <div class="col-md-4">
       <label for="endDateId">Pick Up Date/Time</label>
       <owl-date-time class="owl-dateTime-inline" [(ngModel)]="endDate" name="endDateId" id="endDateId"></owl-date-time>
+    </div>
+  </div -->
+
+  <div class="row">
+    <div class="col-md-4">
+      <ngb-datepicker #dp [(ngModel)]="startDate" (navigate)="startDate = $event.next" name="startDateElementName" id="startDateId"></ngb-datepicker>
+      <ngb-timepicker [(ngModel)]="startTime" [meridian]="true" name="startTimeElementName" id="startTimeId"></ngb-timepicker>
+    </div>
+    <div class="col-md-4">
+      <ngb-datepicker #dp [(ngModel)]="endDate" (navigate)="endDate = $event.next" name="endDateElementName" id="endDateId"></ngb-datepicker>
+      <ngb-timepicker [(ngModel)]="endTime" [meridian]="true" name="endTimeElementName" id="endTimeId"></ngb-timepicker>
     </div>
   </div>
 

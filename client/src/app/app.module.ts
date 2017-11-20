@@ -9,6 +9,7 @@ import { AppComponent } from './app.component';
 
 import { Ng2ImgFallbackModule } from 'ng2-img-fallback';
 import { DateTimePickerModule } from 'ng-pick-datetime';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 // Service and component for beta login
 import { BetaloginComponent } from './betalogin/betalogin.component';
@@ -73,7 +74,8 @@ import { ServicereviewComponent } from './servicereview/servicereview.component'
     ReactiveFormsModule,
     AppRoutingModule,
     Ng2ImgFallbackModule,
-    DateTimePickerModule
+    DateTimePickerModule,
+    NgbModule.forRoot()
   ],
   providers: [
     BetaloginService,
