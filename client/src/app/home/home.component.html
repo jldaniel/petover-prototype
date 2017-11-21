@@ -1,53 +1,32 @@
 
 <div *ngFor="let user of users" [routerLink]="['/profile', user.id]">
-      <div class="container" style="margin: 8% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
-        <div class="row">
-          <div class="col-md-4">
-            <h4 class="text-center">{{user.first_name}} {{user.last_name}}</h4>
-            <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-              <img src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" style="width:50%" class="center-block">
-            </div>
-            <p class="text-center">&#9733;&#9733;&#9733;</p>
-          </div>
-          <!-- Middle - About/rate -->
-          <div class="col-md-4">
-            <div class="row text-center" style="margin: 10% 0% 0 0%;border:1px solid;padding: 2% 0 45%;">
-              <p class="center-block"> {{user.about_me}}</p>
-            </div>
-            <div *ngFor="let service of user.services" class="row">
-              <div class="col-md-4 col-md-offset-2">{{service.name}}</div>
-              <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-                <img src={{service.picture.url}} src-fallback="{{ defaultImage.serviceImage }}" style="width:100%" class="center-block">
-              </div>
-              <div class="col-md-4">{{service.rate}}  {{service.rate_type}}</div>
-            </div>
-          </div>
-          <!-- Right - Review Box -->
-          <div class="col-md-4">
-            <div class="row" style="margin: 10% 0% 0% 0%;border:1px solid;padding: 3%;">
-              <h4 class="text-left media-heading">Reviews</h4>
-              <div class="media" style="border:1px solid;">
-                <div class="media-left">
-                  <img src="../../assets/nav-logo.PNG" alt="logo placeholder" class="media-object" style="width:60px">
-                </div>
-                <div class="media-body">
-                  <p>Excellent Service!</p>
-                </div>
-              </div>
-              <hr>
-              <div class="media" style="border:1px solid;">
-                <div class="media-left">
-                  <img src="../../assets/nav-logo.PNG" alt="logo placeholder" class="media-object" style="width:60px">
-                </div>
-                <div class="media-body">
-                  <p>Very clean and spacious</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+<div class="container">
+<div class="row">
 
+  <!-- Left - Image -->
+  <div class="col-md-4">
+    <h4 class="text-center">{{user.first_name}} {{user.last_name}}</h4>
+    <img src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" class="center-block">
+  </div>
+
+  <!-- Middle - About -->
+  <div class="col-md-4">
+    <p class="center-block"> {{user.about_me}}</p>
+  </div>
+
+  <!-- Right - Image/Rate -->
+  <div class="col-md-4">
+    <div *ngFor="let service of user.services" class="row">
+      <div class="container">
+        <h4>{{service.name}}</h4>
+        <img src={{service.picture.url}} src-fallback="{{ defaultImage.serviceImage }}" class="center-block">
+        <p>$ {{service.rate}}  {{service.rate_type}}</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+</div>
 </div>
 
 

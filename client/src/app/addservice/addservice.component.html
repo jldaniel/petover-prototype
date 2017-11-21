@@ -1,11 +1,40 @@
 <div>
   <form (ngSubmit)="f.form.valid && addService()" #f="ngForm" novalidate>
-    <input type="text" placeholder="Service Name" name="serviceName" [(ngModel)]="serviceName">
-    <input type="text" placeholder="About" name="serviceAbout" [(ngModel)]="serviceAbout">
-    <input type="text" placeholder="Address or Zip" name="serviceAddress" [(ngModel)]="serviceAddress">
-    <input type="number" placeholder="Rate" name="serviceRate" [(ngModel)]="serviceRate">
-    <input type="text" placeholder="Rate Type" name="serviceRateType" [(ngModel)]="serviceRateType">
-    <input type="file" accept="image/*" (change)="attachImage($event)">
-    <button type="submit">Add Service</button>
+
+    <div class="form-group">
+      <label for="serviceNameId">Service Name</label>
+      <input type="text" class="form-control" name="serviceName" id="serviceNameId" [(ngModel)]="serviceName">
+    </div>
+
+    <div class="form-group">
+      <label for="serviceAboutId">About</label>
+      <input type="text" class="form-control"  placeholder="About" name="serviceAbout" id="serviceAboutId" [(ngModel)]="serviceAbout">
+    </div>
+
+    <div class="form-group">
+      <label for="addressId">Location</label>
+      <input type="text" class="form-control" placeholder="Address or Zip" name="serviceAddress" id="addressId" [(ngModel)]="serviceAddress">
+    </div>
+
+    <div class="form-group">
+      <label for="rateId">Rate</label>
+    <input type="number" class="form-control"  placeholder="Rate" name="serviceRate" id="rateId" [(ngModel)]="serviceRate">
+    </div>
+
+    <div class="form-group">
+      <label for="rateTypeId">Rate Type</label>
+      <select class="form-control" name="serviceRateType" id="rateTypeId" [(ngModel)]="serviceRateType">
+        <option>Hourly</option>
+        <option>Daily</option>
+        <option>Single Payment</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="fileId">Upload an Image</label>
+      <input type="file" class="form-control-file" accept="image/*" id="fileId" (change)="attachImage($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Service</button>
   </form>
 </div>

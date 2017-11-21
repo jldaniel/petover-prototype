@@ -20,7 +20,7 @@
 
           <div class="notification-item" *ngFor="let notification of requesterNotifications">
             <p><b>Your Request has been {{ notification.request_state }}</b></p>
-            <a [routerLink="['/stayovers']">View</a>
+            <a [routerLink]="['/stayovers']">View</a>
           </div>
         </div>
       </div>

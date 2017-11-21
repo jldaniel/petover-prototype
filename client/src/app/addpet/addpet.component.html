@@ -1,9 +1,30 @@
 <div>
   <form (ngSubmit)="f.form.valid && addPet()" #f="ngForm" novalidate>
-    <input type="text" placeholder="Pet Name" name="petName" [(ngModel)]="petName">
-    <input type="text" placeholder="About Me" name="petAboutMe" [(ngModel)]="petAboutMe">
-    <input type="text" placeholder="Type of Animal" name="petAnimal" [(ngModel)]="petAnimal">
-    <input type="file" accept="image/*" (change)="attachImage($event)">
-    <button type="submit">Add Pet</button>
+
+    <div class="form-group">
+      <label for="petNameId">Pet Name</label>
+      <input type="text" class="form-control" name="petName" id="petNameId" [(ngModel)]="petName">
+    </div>
+
+    <div class="form-group">
+      <label for="aboutMeId">About Me</label>
+      <input type="text" class="form-control" name="petAboutMe" id="aboutMeId" [(ngModel)]="petAboutMe">
+    </div>
+
+    <div class="form-group">
+      <label for="animalTypeId">Type of Animal</label>
+      <select multiple class="form-control" id="animalTypeId" [(ngModel)]="petAnimal">
+        <option>Dog</option>
+        <option>Cat</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="petImageId">Pet Profile Picture</label>
+      <input type="file" class="form-control-file" accept="image/*" id="petImageId" name="petImage" (change)="attachImage($event)">
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Pet</button>
+
   </form>
 </div>
