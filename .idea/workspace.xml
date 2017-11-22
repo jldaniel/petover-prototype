@@ -1,27 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/ants_in_my_eyes_johnson/Ants_in_my_eyes_johnson.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/beth_smith/Rick_and_Morty_characters_-_Beth_Smith.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/beth_smith/S1e1_horse_surgery.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/bird_person/bird_person.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/jerry_smith/Gazorpazorpfield_(Character).png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/jerry_smith/Rick_and_Morty_characters_-_Jerry_Smith.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/krombopulos_michael/plfmrqxfe6xy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/krombopulos_michael/zD8gCux.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/morty_smith/dog-accountant-rick-and-morty-7.58.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/morty_smith/morty.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/morty_smith/snuffles_helmet.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/morty_smith/tve50918-3731-20131209-1.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/mr_meeseeks/MeeseeksHQ.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/rick_sanches/Rick_and_Morty_characters_-_Rick_Sanchez.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/rick_sanches/squanching.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/summer_smith/Izzy.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/summer_smith/Rick_and_Morty_characters_-_Summer_Smith.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/client/src/assets/images/summer_smith/tinkles-rick-and-morty-3.28.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/config/initializers/carrierwave.rb" afterPath="$PROJECT_DIR$/config/initializers/carrierwave.rb" />
-    </list>
+    <list default="true" id="1ba871ab-3be7-4f36-afee-1e1647a284e4" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
     <ignored path="$PROJECT_DIR$/components/" />
     <ignored path="$PROJECT_DIR$/public/system/" />
@@ -123,21 +103,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="carrierwave.rb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="carrierwave.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/config/initializers/carrierwave.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+            <state relative-caret-position="342">
+              <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="seeds.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/db/seeds.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+            <state relative-caret-position="306">
+              <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
               <folding />
             </state>
           </provider>
@@ -253,8 +233,8 @@
     <handled-path value="$PROJECT_DIR$/client/node_modules" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="378" />
-    <option name="y" value="267" />
+    <option name="x" value="149" />
+    <option name="y" value="186" />
     <option name="width" value="1751" />
     <option name="height" value="889" />
   </component>
@@ -321,6 +301,12 @@
               <item name="petover" type="b2602c69:ProjectViewProjectNode" />
               <item name="petover" type="462c0819:PsiDirectoryNode" />
               <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="petover" type="b2602c69:ProjectViewProjectNode" />
+              <item name="petover" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+              <item name="environments" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="petover" type="b2602c69:ProjectViewProjectNode" />
@@ -508,15 +494,15 @@
       <workItem from="1510415811136" duration="1060000" />
       <workItem from="1510540973229" duration="2824000" />
       <workItem from="1510871360900" duration="3363000" />
-      <workItem from="1510946504844" duration="4793000" />
+      <workItem from="1510946504844" duration="6354000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="103436000" />
+    <option name="totallyTimeSpent" value="104997000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="378" y="267" width="1751" height="889" extended-state="0" />
+    <frame x="149" y="186" width="1751" height="889" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2451613" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -855,18 +841,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/initializers/carrierwave.rb">
+    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="16" column="57" lean-forward="false" selection-start-line="16" selection-start-column="57" selection-end-line="16" selection-end-column="57" />
+        <state relative-caret-position="306">
+          <caret line="29" column="23" lean-forward="true" selection-start-line="29" selection-start-column="23" selection-end-line="29" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db/seeds.rb">
+    <entry file="file://$PROJECT_DIR$/config/initializers/carrierwave.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="19" column="34" lean-forward="false" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+        <state relative-caret-position="342">
+          <caret line="25" column="44" lean-forward="true" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
           <folding />
         </state>
       </provider>
