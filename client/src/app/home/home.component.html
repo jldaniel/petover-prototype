@@ -1,26 +1,26 @@
-
 <div *ngFor="let user of users" [routerLink]="['/profile', user.id]">
 <div class="container">
-<div class="row">
+<div class="row mh-100" style="height: 200px; margin: 10% 10% 10% 10%">
 
   <!-- Left - Image -->
   <div class="col-md-4">
     <h4 class="text-center">{{user.first_name}} {{user.last_name}}</h4>
-    <img src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" class="center-block">
+    <div>
+    <img class="img-fluid img-thumbnail" src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" style="height: 150px">
+    </div>
   </div>
 
   <!-- Middle - About -->
-  <div class="col-md-4">
+  <div class="col-md-4" style="overflow-y:scroll;">
     <p class="center-block"> {{user.about_me}}</p>
   </div>
 
   <!-- Right - Image/Rate -->
-  <div class="col-md-4">
-    <div *ngFor="let service of user.services" class="row">
+  <div class="col-md-4" style="overflow-y:scroll;">
+    <div *ngFor="let service of user.services" class="row" class="row mh-100" style="height: 100px">
       <div class="container">
-        <h4>{{service.name}}</h4>
-        <img src={{service.picture.url}} src-fallback="{{ defaultImage.serviceImage }}" class="center-block">
-        <p>$ {{service.rate}}  {{service.rate_type}}</p>
+          <h4 class="text-center">{{service.name}}</h4>
+          <p>$ {{service.rate}}</p>
       </div>
     </div>
   </div>

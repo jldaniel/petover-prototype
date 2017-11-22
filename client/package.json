@@ -51,6 +51,8 @@
     "popper": "^1.0.0",
     "protractor": "~5.1.2",
     "rxjs": "^5.4.2",
+    "system": "^2.0.1",
+    "systemjs": "^0.20.19",
     "ts-helpers": "^1.1.2",
     "ts-node": "~3.2.0",
     "tslint": "~5.3.2",

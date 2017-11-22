@@ -10,7 +10,7 @@ import {DefaultImage} from '../util/DefaultImage';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  public user: User;
+  public user: User = new User();
   defaultImage = new DefaultImage();
 
   constructor(private api: ApiService, private route: ActivatedRoute) {
