@@ -5,23 +5,23 @@
 
   <!-- Left - Image -->
   <div class="col-md-4">
-    <h4 class="text-center">{{user.first_name}} {{user.last_name}}</h4>
+    <h4 class="text-center">{{user?.first_name}} {{user?.last_name}}</h4>
     <div>
-    <img class="img-fluid img-thumbnail" src={{user.picture.url}} src-fallback="{{ defaultImage.userImage }}" style="height: 150px">
+    <img class="img-fluid img-thumbnail" src={{user?.picture?.url}} src-fallback="{{ defaultImage.userImage }}" style="height: 150px">
     </div>
   </div>
 
   <!-- Middle - About -->
   <div class="col-md-4" style="overflow-y:scroll;">
-    <p class="center-block"> {{user.about_me}}</p>
+    <p class="center-block"> {{user?.about_me}}</p>
   </div>
 
   <!-- Right - Image/Rate -->
   <div class="col-md-4" style="overflow-y:scroll;">
-    <div *ngFor="let service of user.services" class="row" class="row mh-100" style="height: 100px">
+    <div *ngFor="let service of user?.services" class="row" class="row mh-100" style="height: 100px">
       <div class="container">
-          <h4 class="text-center">{{service.name}}</h4>
-          <p>$ {{service.rate}}</p>
+          <h4 class="text-center">{{service?.name}}</h4>
+          <p>$ {{service?.rate}}</p>
       </div>
     </div>
   </div>
