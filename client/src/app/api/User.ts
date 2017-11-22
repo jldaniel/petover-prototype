@@ -11,7 +11,7 @@ export class User {
   img_url: string;
   created_at: string;
   updated_at: string;
-  pets: Pet[] = null;
-  services: Service[] = null;
+  pets: Pet[] = [];
+  services: Service[] = [];
   picture: Picture = null;
 }

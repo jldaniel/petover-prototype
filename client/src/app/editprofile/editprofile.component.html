@@ -1,9 +1,22 @@
-<div>
-  <form (ngSubmit)="f.form.valid && updateProfile()" #f="ngForm" novalidate>
-    <input type="text" placeholder="First Name" name="firstName" [(ngModel)]="updatedFirstName">
-    <input type="text" placeholder="Last Name" name="lastName" [(ngModel)]="updatedLastName">
-    <input type="text" placeholder="About Me" name="aboutMe" [(ngModel)]="updatedAboutMe">
-    <input type="file" accept="image/*" (change)="attachImage($event)">
-    <button type="submit">Update Profile</button>
+<div class="container">
+  <form class="form-signin" style="margin-top: 100px" (ngSubmit)="f.form.valid && updateProfile()" #f="ngForm" novalidate>
+
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="First Name" name="firstName" [(ngModel)]="updatedFirstName">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Last Name" name="lastName" [(ngModel)]="updatedLastName">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="About Me" name="aboutMe" [(ngModel)]="updatedAboutMe">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control-file" type="file" accept="image/*" (change)="attachImage($event)">
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Update Profile</button>
   </form>
 </div>

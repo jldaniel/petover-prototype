@@ -1,28 +1,23 @@
 
 <!-- Pet profile picture -->
 
-<div *ngFor="let pet of user.pets">
-  <div class="container" style="margin: 10% 7% 0 7%;">
+<div *ngFor="let pet of user?.pets">
+<hr/>
+  <div class="container" >
     <div class="row">
-      <div class="col-md-4" style="margin: 2% 2% 0 2%;">
-        <h4 class="text-center">{{pet.name}}</h4>
-        <div class="row" style="margin: 2px 0 5% 0; padding:0 5% 12% 5%;">
-          <img src={{pet.picture.url}} src-fallback="{{ defaultImage.petImage }}" style="width:50%" class="center-block">
-        </div>
+      <div class="col">
+        <h4 class="text-center">{{pet?.name}}</h4>
+        <img src={{pet?.picture?.url}} src-fallback="{{ defaultImage.petImage }}" style="width:100%" class="center-block">
       </div>
 
       <!-- Right - Notificaton Box -->
-      <div class="col-md-6">
-        <div class="row" style="margin: 1% 0% 0% 0%;padding: 3%;">
-          <h4 class="text-left media-heading">Pet Information </h4>
-          <div class="media" style="margin: 3% 0% 0% 0%;border:1px solid;padding: 2% 2% 25%;">
-            <h3>{{pet.animal}}</h3>
-            <p>{{pet.about_me}}</p>
-          </div>
+      <div class="col">
+        <h4 class="text-left media-heading">Pet Information </h4>
+        <div class="media" style="margin: 3% 0% 0% 0%;border:1px solid;padding: 2% 2% 25%;">
+          <h3>{{pet?.animal}}</h3>
+          <p>{{pet?.about_me}}</p>
+          <a class="pull-right" [routerLink]="['/editpet', pet.id]">Edit</a>
         </div>
-      </div>
-      <div>
-        <a [routerLink]="['/editpet', pet.id]">Edit</a>
       </div>
     </div>
   </div>

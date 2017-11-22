@@ -1,8 +1,26 @@
-<div>
-  <form (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
-    <input type="email" placeholder="email" name="email" [(ngModel)]="email">
-    <input type="password" placeholder="password" name="password" [(ngModel)]="password">
-    <input type="password" placeholder="repeat password" name="passwordCheck" [(ngModel)]="passwordCheck">
-    <button type="submit">Create Account</button>
+<div class="container">
+  <form class="form-signin" style="margin-top: 100px" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+    <div class="form-group row">
+      <label for="emailId" class="col-form-label">Email</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="email" placeholder="email" name="email" id="emailId" [(ngModel)]="email">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="passwordId" class="col-form-label">Password</label>
+      <div class="col-sm-10">
+        <input class="form-control" type="password" placeholder="password" name="password" id="passwordId" [(ngModel)]="password">
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label for="passwordCheckId" class="col-form-label">Retype Password</label>
+      <div class="col-sm-10">
+      <input class="form-control" type="password" placeholder="repeat password" name="passwordCheck" id="passwordCheckId" [(ngModel)]="passwordCheck">
+      </div>
+    </div>
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Create Account</button>
   </form>
 </div>
+

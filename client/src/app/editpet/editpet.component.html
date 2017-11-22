@@ -1,9 +1,21 @@
-<div>
-  <form (ngSubmit)="f.form.valid && updatePet()" #f="ngForm" novalidate>
-    <input type="text" placeholder="Name" name="petName" [(ngModel)]="updatedName">
-    <input type="text" placeholder="About Me" name="petAboutMe" [(ngModel)]="updatedAboutMe">
-    <input type="text" placeholder="Animal Type" name="petAnimal" [(ngModel)]="updatedAnimal">
-    <input type="file" accept="image/*" (change)="attachImage($event)">
-    <button type="submit">Update Pet</button>
+<div class="container">
+  <form class="form-signin" style="margin-top: 100px" (ngSubmit)="f.form.valid && updatePet()" #f="ngForm" novalidate>
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Name" name="petName" [(ngModel)]="updatedName">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="About" name="petAboutMe" [(ngModel)]="updatedAboutMe">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control" type="text" placeholder="Animal Type" name="petAnimal" [(ngModel)]="updatedAnimal">
+    </div>
+
+    <div class="form-group">
+      <input class="form-control-file" type="file" accept="image/*" (change)="attachImage($event)">
+    </div>
+
+    <button class="btn btn-lg btn-primary btn-block" type="submit">Update Pet</button>
   </form>
 </div>

@@ -1,39 +1,46 @@
 
-<div class="container" style="margin: 8% 7% 0 7%;border: 3px solid; background-color: #f2f2d9;">
-  <div class="row">
-    <div class="span9">
+<div class="container">
+  <div class="row" style="padding-bottom: 100px">
+    <div class="col">
       <h3 class="text-center">{{user?.first_name}} {{user?.last_name}}</h3>
       <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-        <img src={{user?.picture?.url}} src-fallback="{{ defaultImage.userImage }}" style="width:100%" class="center-block">
+        <img src={{user?.picture?.url}} src-fallback="{{ defaultImage.userImage }}" style="width:100px" class="center-block">
       </div>
-      <p class="text-center">&#9733;&#9733;&#9733;</p>
     </div>
     <!-- Middle - About/rate -->
-    <div class="span9">
-      <div class="row text-center" style="margin: 10% 0% 0 0%;border:1px solid;padding: 2% 0 45%;">
+    <div class="col">
         <p class="center-block"> {{user?.about_me}}</p>
-      </div>
     </div>
-    <div class="span9">
-      <div *ngFor="let service of user?.services" class="row">
-        <div class="col-md-4 col-md-offset-2">{{service?.name}}</div>
-        <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-          <img src={{service?.picture?.url}} src-fallback="{{ defaultImage.serviceImage }}" style="width:100%" class="center-block">
-        </div>
-        <div class="col-md-4">{{service?.rate}}  {{service?.rate_type}}</div>
+  </div>
+  <h4 *ngIf="user?.services.length > 0">Services</h4>
+  <hr/>
+  <div class="row" style="padding-bottom: 100px">
+    <div *ngFor="let service of user?.services" class="row">
+      <h5 >{{service?.name}}</h5>
+      <div class="col">
+        <img src={{service?.picture?.url}} src-fallback="{{ defaultImage.serviceImage }}" style="width:100px" class="center-block">
+      </div>
+      <div class="col">
+        <p class="pull-right">{{ service?.about }}</p>
+        <p class="pull-right">$ {{service?.rate}}</p>
         <a [routerLink]="['/servicerequest', service?.id]">Request Service</a>
       </div>
     </div>
+  </div>
 
-    <div class="span9">
-      <div *ngFor="let pet of user?.pets" class="row">
-        <div class="row" style="margin: 2px 0 2px 0; padding:0 5% 12% 5%;">
-          <img src={{pet?.picture?.url}} src-fallback="{{ defaultImage.petImage }}" style="width:100%" class="center-block">
-        </div>
-        <div class="col-md-4 col-md-offset-2">{{pet?.name}}</div>
-        <div class="col-md-4">{{pet?.about_me}}</div>
+  <h4 *ngIf="user?.pets.length > 0">Pets</h4>
+  <hr/>
+  <div class="row" style="padding-bottom: 100px">
+    <div *ngFor="let pet of user?.pets" class="row">
+      <div class="col">
+        <h5>{{ pet?.name }}</h5>
+        <img src={{pet?.picture?.url}} src-fallback="{{ defaultImage.petImage }}" style="width:100px" class="center-block">
       </div>
-    </div>
+      <div class="col">
+      <p>{{pet?.about_me}}</p>
+      </div>
+      </div>
+  </div>
 
     <!-- Right - Review Box
     <div class="col-md-4">
@@ -58,5 +65,5 @@
         </div>
       </div>
     </div -->
-  </div>
-</div>
+</div> <!-- container -->
+
