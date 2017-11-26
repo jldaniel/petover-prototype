@@ -219,10 +219,17 @@ Deploy the app to heroku,
 ```bash
 cd petover
 git push heroku master
-git run rake db:seed
+git run rake db:migrate db:seed
 ```
 
 Once the app has been deployed, in the terminal output you should see a link to your deployed app. The link can also be found by going to your Heroku dashboard and looking at your deployed apps.
 
+In order to deploy to a specific app, e.g. the petover app setup on heroku, then you need to run
 
+```bash
+cd petover
+heroku git:remote -a petover
+git push heroku master
+git run rake db:migrate db:seed
+```
 
